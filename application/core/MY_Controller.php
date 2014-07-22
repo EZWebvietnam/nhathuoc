@@ -24,7 +24,14 @@ class MY_Controller extends CI_Controller
 			}else{
 				$ip = $_SERVER['REMOTE_ADDR'];
 			}
-		$count_cart = count($this->cartmodel->list_cart_ip($ip));
+		$cart = $this->cartmodel->list_cart_ip($ip);
+		$total_money = 0;
+		foreach($cart as $c)
+		{
+			$total_money +=$c['total_price'];	
+		}
+		$this->data['total_money'] = $total_money;
+		$count_cart = count($cart);
 		$this->data['count_cart']=$count_cart;
 	}
     public function load_header()

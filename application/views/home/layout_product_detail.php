@@ -54,21 +54,10 @@
 		<div id="wrapper_top">
 			<div class="wrapper_top">
 				<div class="wt_menu">
-					<div class="wt_col"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" width="1" height="1" alt="spacer" /></div>
-					<div class="wt_item"><a  rel="" href="/vn/" target="_self">Nhathuoc365</a></div>
-					<div class="wt_col"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" width="1" height="1" alt="spacer" /></div>
-					<div class="wt_item"><a  rel="" href="http://www.tuvangiamcan.vn/" target="_self">Tư vấn giảm cân</a></div>
-					<div class="wt_col"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" width="1" height="1" alt="spacer" /></div>
-					<div class="wt_item"><a  rel="" href="http://www.methongthai.vn/" target="_self">Mẹ thông thái</a></div>
-					<div class="wt_col"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" width="1" height="1" alt="spacer" /></div>
-					<div class="wt_item"><a  rel="" href="http://www.dinhduong365.vn" target="_self">Dinh dưỡng 365</a></div>
-					<div class="wt_col"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" width="1" height="1" alt="spacer" /></div>
-					<div class="wt_deal">
-						<a href="/hot-deal.html">Deal Giờ vàng giá tốt</a>
-					</div>
+					
 				</div>
 				<div id="user_tool">
-					<a class="login" href="/dang-nhap.html" title="Đăng nhập" rel="nofollow">Đăng nhập</a><a class="register" href="/dang-ky.html" title="Đăng ký" rel="nofollow">Đăng ký</a><a class="support" href="/gioi-thieu/huong-dan-mua-hang.html" title="Trợ giúp mua hàng" rel="nofollow">Trợ giúp mua hàng</a>
+					
 				</div>
 				<!--end #user_tool-->	
 			</div>
@@ -87,43 +76,16 @@
 					<div id="cart_user">
 						<div id="cart_tool">
 							<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" alt="spacer" width="10" height="10"/></div>
-							<div class="cart_info">
-								<div id="cartTotal" class="cartTotal"><span>Tổng tiền: 0 ₫</span></div>
-								<div id="right-box-2" style="position:relative;" class="CartInfo" onmouseover="showContent()" onmouseout="hideContent()">
-									<a href="<?php echo base_url();?>gio-hang" title="Giỏ hàng" rel="nofllow"><span id="numCart">Giỏ hàng (0)</span></a>
+								<div class="cart_info">
+								<div id="cartTotal" class="cartTotal"><span>Tổng tiền: <?php echo number_format($total_money);?> ₫</span></div>
+								<div id="right-box-2" style="position:relative;" class="CartInfo" >
+									<a href="<?php echo base_url();?>gio-hang" title="Giỏ hàng" rel="nofllow"><span id="numCart">Giỏ hàng (<?php echo $count_cart;?>)</span></a>
 									<div class="clear"></div>
-									<div id="show-content-1" style="display:none;">
-										<div id="popCart">
-											<div id="bcart">
-												<div class="top_bcart">
-													<div class="left"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-													<div class="main"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-													<div class="right">&nbsp;</div>
-												</div>
-												<!--end .top_bcart-->	
-												<div class="m_bcart"> Chưa có sản phẩm nào	</div>
-												<div class="bot_bcart">
-													<div class="left"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-													<div class="main"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-													<div class="right"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-												</div>
-												<!--end .top_bcart-->
-											</div>
-											<!--end #bcart-->					
-										</div>
-									</div>
+									
 								</div>
-								<script type="text/javascript">
-									function showContent(){
-										var offset = $("#right-box-2").offset();
-										$("#show-content-1").css({'display':'block','position':'absolute','z-index':'102','right':'0'});
-									}
-									function hideContent(){
-										$("#show-content-1").css('display','none');
-									}
-								</script>
-								<div class="clear"></div>
-							</div>
+									<div class="clear"></div>
+									
+								</div>
 							<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" alt="spacer" width="5" height="5"/></div>
 							<a class="tranport_free" href="/thong-bao/cuoc-van-chuyen.html">Cước vận chuyển</a>
 							<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" alt="spacer" width="5" height="5"/></div>
@@ -141,43 +103,26 @@
 				<!--end #header-->
 				<div id="menu_top">
 					<ul  class="menu" id="menu">
-						<li ><a  class="mt_it" href="/vn/" target="_self" rel="">Trang chủ</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
+						
+						<li ><a  class="select" href="<?php echo base_url();?>" target="_self" rel="">Trang chủ</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
+						<li ><a  class="mt_it" href="<?php echo base_url();?>gioi-thieu" target="_self" rel="">Giới thiệu</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
 						<li >
-							<a  class="mt_it" href="/nhom-hang.html" target="_self" rel="">Sản phẩm	</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span>
+							<a  class="mt_it" href="<?php echo base_url();?>san-pham" target="_self" rel="">Sản phẩm	</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span>
 							<ul>
-								<li class="sub_it"><a   href="/tinh-dau-tu-nhien.html" target="_self" rel="nofollow">Tinh dầu tự nhiên</a></li>
-								<li class="sub_it"><a   href="/vitamins-acid-amin-va-khoang-chat.html" target="_self" rel="follow">Vitamin khoáng chất</a></li>
-								<li class="sub_it"><a   href="/hoocmon-va-noi-tiet.html" target="_self" rel="nofollow">Hooc môn và nội tiết</a></li>
-								<li class="sub_it"><a   href="/thuoc-bo-than-kinh.html" target="_self" rel="nofollow">Thuốc bổ thần kinh</a></li>
-								<li class="sub_it"><a   href="/lam-dep-chong-lao-hoa.html" target="_self" rel="nofollow">Làm đẹp</a></li>
-								<li class="sub_it"><a   href="/ho-tro-dieu-tri-benh-tieu-duong.html" target="_self" rel="nofollow">Điều trị tiểu đường</a></li>
-								<li class="sub_it"><a   href="/ho-tro-tuan-hoan-nao.html" target="_self" rel="nofollow">Tuần hoàn não</a></li>
-								<li class="sub_it"><a   href="/bo-than-tiet-nieu.html" target="_self" rel="nofollow">Bổ thận–Tiết niệu</a></li>
-								<li class="sub_it"><a   href="/he-tieu-hoa-gan.html" target="_self" rel="nofollow">Hệ Tiêu hóa-Gan</a></li>
-								<li class="sub_it"><a   href="/xuong-khop.html" target="_self" rel="nofollow">Xương khớp</a></li>
-								<li class="sub_it"><a   href="/thuoc-dieu-tri-cao-huyet-ap-tim-mach.html" target="_self" rel="nofollow">Tim mạch- Huyết áp</a></li>
-								<li class="sub_it"><a   href="/suc-khoe-sinh-ly-nam.html" target="_self" rel="nofollow">SK - Sinh lý nam</a></li>
-								<li class="sub_it"><a   href="/suc-khoe-sinh-ly-nu.html" target="_self" rel="nofollow">SK - Sinh lý nữ</a></li>
-								<li class="sub_it"><a   href="/thuc-pham-giam-can-an-kieng.html" target="_self" rel="nofollow">Thực phẩm giảm cân</a></li>
-								<li class="sub_it"><a   href="/ho-tro-dieu-tri-ung-thu-buou.html" target="_self" rel="nofollow">Hỗ trợ điều trị ung thư</a></li>
-								<li class="sub_it"><a   href="/suc-khoe-tre-em.html" target="_self" rel="nofollow">Sức khỏe trẻ em</a></li>
-								<li class="sub_it"><a   href="/mien-dich-giai-doc.html" target="_self" rel="nofollow">Miễn dịch - Giải độc</a></li>
-								<li class="sub_it"><a   href="/mat-tai-mui-hong.html" target="_self" rel="nofollow">Mắt-tai-mũi-họng</a></li>
+							<?php 
+							foreach($list_cate_home as $cate_home)
+							{
+							?>
+							<li class="sub_it"><a   href="<?php echo base_url();?>san-pham/c/<?php echo $cate_home['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_home['title'])));?>" target="_self" rel="nofollow"><?php echo $cate_home['title']?></a></li>
+							<?php }  ?>
+								
+								
 							</ul>
 						</li>
-						<li ><a  class="mt_it" href="/thuong-hieu.html" target="_self" rel="">Thương hiệu</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
-						<li ><a  class="mt_it" href="/khuyen-mai.html" target="_self" rel="">Khuyến mãi</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
-						<li ><a  class="mt_it" href="/mua-mot-tang-mot.html" target="_self" rel="nofollow">Mua 1 Tặng 1</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
-						<li ><a  class="mt_it" href="/san-pham-moi.html" target="_self" rel="">Sản phẩm mới</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
-						<li >
-							<a  class="mt_it" href="/tin-tuc.html" target="_self" rel="follow">Tin khuyến mại</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span>
-							<ul>
-								<li class="sub_it"><a   href="/ma-giam-gia.html" target="_self" rel="follow">Mã giảm giá</a></li>
-								<li class="sub_it"><a   href="/tin-khuyen-mai.html" target="_self" rel="follow">Tin khuyến mại</a></li>
-							</ul>
-						</li>
-						<li ><a  class="mt_it" href="/gioi-thieu/gioi-thieu.html" target="_self" rel="">Giới thiệu</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
-						<li ><a  class="mt_it" href="/lien-he.html" target="_self" rel="">Liên hệ</a></li>
+						
+						<li ><a  class="mt_it" href="<?php echo base_url();?>khuyen-mai" target="_self" rel="">Khuyến mại</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
+						
+						<li ><a  class="mt_it" href="<?php echo base_url();?>gioi-thieu" target="_self" rel="">Liên hệ</a></li>
 					</ul>
 					<script type="text/javascript">
 						var menu=new menu.dd('menu');
@@ -706,23 +651,11 @@
 					<!--end #footer_menu-->	
 					<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
 					<div id="footer_ext">
-						<div id="news_letter" style="background: url(<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/voucher.png) #bde546 center center no-repeat; ">
-							<div class="nl_form">
-								<form action="/ajax.html" name="frmNewletter" method="post" onsubmit="return validateNewsletter(this)" autocomplete="off">
-									<input type="text" name="email" value="" placeholder="Địa chỉ Email của bạn" />			
-									<div class="clear"></div>
-									<input type="submit" value="Đăng ký - Nhận tiện ích" />			<input type="hidden" name="new_research" value="1" />			<input type="hidden" name="action" value="reg_newsletter" />		
-								</form>
-							</div>
-							<!-- End .nl_form -->
-						</div>
-						<!-- End #news_letter -->	
 						<!--end #news_letter-->		
 						<div id="copy_info">
 							<div class="info">
 								<div>
-									<p style="text-align: justify;">&nbsp;<a href="http://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=5986" target="_blank"><img src="/upload_images/Sanpham/dky.jpg" width="270" height="58" alt="" /></a>&nbsp;</p>
-									<p style="text-align: justify;"><strong>Bản quy&ecirc;̀n website thu&ocirc;̣c Nhathuoc365 </strong><span style="font-size: small;"><span style="font-family: Arial;"> </span></span></p>
+									
 									<p style="text-align: justify;"><strong>Địa chỉ:</strong> Ph&ograve;ng 603, nh&agrave; 24T2 Ho&agrave;ng Đạo Th&uacute;y, H&agrave; Nội<span style="font-family: Arial;"> </span>&nbsp;</p>
 									<p><span style="font-size: small;"><span style="font-family: Arial;"> </span></span></p>
 									<p style="text-align: justify;"><strong>Điện thoại</strong>: 1800.8155 | Mobile: 0943.48.49.50<span style="font-size: small;"><span style="font-family: Arial;"> </span></span>&nbsp;</p>
@@ -739,15 +672,7 @@
 									<p><span style="position: absolute; top: -100px; overflow: auto"> <strong><em> <a href="http://gameandroidhot.net/" title="game android">game android</a> <a href="http://yugo.vn/phu-nu/" title="bao phu nu">bao phu nu</a>, <a href="http://yugo.vn/bao-moi/" title="bao moi">bao moi</a>, <a href="http://xulynuoc.com/" title="xu ly nuoc">xu ly nuoc</a> <a href="http://hungcatloi.com.vn/dich-vu/thanh-lap-cong-ty" title="thanh lap cong ty">thanh lap cong ty</a> <a href="http://gumua.com/thuoc-giam-can.html" title="thuoc giam can">thuoc giam can</a> </em></strong> </span></p>
 								</div>
 							</div>
-							<div class="copy">
-								<div class="counter">
-									<div><span class="b">Số lượt truy cập:</span> <span>11.680.646</span></div>
-									<div class="cler"></div>
-									<div><span class="b">Số người trực tuyến:</span> <span>228</span></div>
-								</div>
-								<div class="clear"></div>
-								<div style="text-align:right;">Thiết kế web: <a href="http://www.finalstyle.com">Finalstyle</a></div>
-							</div>
+							
 							<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
 						</div>
 					</div>

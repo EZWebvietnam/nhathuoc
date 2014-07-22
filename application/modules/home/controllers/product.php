@@ -12,6 +12,7 @@ class Product extends MY_Controller
 		parent::load_header();
 		parent::load_yahoo();
 		parent::load_cart();
+		parent::count_cart();
 		$this->load->model('catehomemodel');
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
 		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();

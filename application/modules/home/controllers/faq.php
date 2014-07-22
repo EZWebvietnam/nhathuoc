@@ -9,6 +9,7 @@ class Faq extends MY_Controller
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
+		parent::count_cart();
 		//parent::about();
 		$this->load->model('producthomemodel');
 		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2014 at 05:20 AM
+-- Generation Time: Jul 22, 2014 at 06:31 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `tibimart`
+-- Database: `nhathuoc`
 --
 
 -- --------------------------------------------------------
@@ -58,14 +58,14 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`id`, `id_product`, `quantity`, `price`, `total_price`, `ip`, `create_date`) VALUES
-(1, 8, 1, 100000, 100000, '127.0.0.1', 1404208290);
+(4, 1, 1, 160000, 160000, '127.0.0.1', 1406002821);
 
 -- --------------------------------------------------------
 
@@ -112,49 +112,44 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('02bdd6c856a41134d58ee2f260749cb4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788707, ''),
-('061b5ae37ecb7acba8d7d50a6cf33ed8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785326, ''),
-('0c8184fa7e6730dbc7d62d6b911982e0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788710, ''),
-('171adc3c3d1f7344d7eb7dfec49441b3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785298, ''),
-('1a4c5580aa714e85fc63ed6c41c4433b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786009, ''),
-('1d394270dc9065df4125dd9bdb516f6c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788824, ''),
-('1d77f5d0b44cb816fcc1f597f87128d8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786333, ''),
-('22898dba9cb972ccc76d6d9cf3a93862', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785989, ''),
-('2f06592e39aa7a9149818841d8862162', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786503, ''),
-('39617b68414ba623aaa3813624d483a5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785963, ''),
-('438b4623be297fc16120ad5948323639', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785273, ''),
-('496b6953e0f531000039bb9fbb188bea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786507, ''),
-('4a88812494ef4dede024cb65fb3b8695', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786475, ''),
-('57f1017e15341ed652ac358b5672c88d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786475, ''),
-('599c0f9cf952fc83f465e33f278f3a21', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785967, ''),
-('5bf38756dc78846a512e4f607367c86f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786314, ''),
-('636e807897ae10316cdb1aeb7be54d0c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786014, ''),
-('72938163175f7bc72fe496ac5f1903e6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786501, ''),
-('72f1b559185e68f058af5f0f3dbbb99d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786014, ''),
-('7834df8c119e96114fde20f6dcbc9625', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786513, ''),
-('7b123e589b13070d9de74fb2e31fadde', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786504, ''),
-('7e0951bf692ef68b7b562f87cc90baf0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786016, ''),
-('7f434d27b926e5f039feb11da5a0e10b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788780, ''),
-('7ff40de8a67f8217fb008979eb52e8ae', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785311, ''),
-('8655c25fc1c75cdbf48d818c493e37d3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786511, ''),
-('867d00796274f4e9bd8ea4e6e99cbce7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788826, ''),
-('8694eba995acb3fa89e65571b36fa517', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785669, ''),
-('8bcfe2864c2f2e17d842d14866761ee3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785487, ''),
-('8e873b85af451e4c2ab8d1237079b054', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788707, ''),
-('9d6450131c01419330f00f49d0ea6a8f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786310, ''),
-('b0e69986c4487a8103c5ec7b4bd0d326', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786510, ''),
-('b65ca29992d1112fff1f70e9f72fa4e3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785373, ''),
-('b7b0ed00b829c37fc78689fe35d189c3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785963, ''),
-('bd73de9e88ab1b975464de22ac28cba3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788876, ''),
-('c121400dee2655d7f145ceb5608424ab', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786037, ''),
-('c9de6518fb232826c9a262cbd09e35fd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786335, ''),
-('e12502dea01a9c4b870cc642003a9a67', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788824, ''),
-('e2585ca51c10fea62a2947790b7bbb0f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788712, ''),
-('e4d4471aa34fc5d1d695404f85e5de93', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786333, ''),
-('eb263a0683b4328f44b3b8360c2559c8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786227, ''),
-('ec8693de1f0cbcf70d95b2f49e77bde7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785972, ''),
-('f5d23eb7b531f6d7b404da7d5657a389', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785433, ''),
-('f66ac7d9dbb42200fd8d13b17f7b0ca1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785281, '');
+('1bd6551b42f6fd68cad8374a100b970c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003359, ''),
+('1de2bba7ea0a8c5406443914186ccda1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003406, ''),
+('22415f82c050fd1bd936088acfe123f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003364, ''),
+('4ec2b789519e91104d83cba36057a527', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003330, ''),
+('5a6c39e0b25b3451b1acf48070f5ce92', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003358, ''),
+('62519ddead2b1c0bb047eab55a9a99bc', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003400, ''),
+('66607039e21055f08dca33dc4366e3f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003407, ''),
+('6a2faee43fcc9da93d51dea09c05cd4d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003349, ''),
+('71c36eb71f568eb7fd205fef3808769a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003367, ''),
+('a392cabb33a1287cb53578b9b7b080a8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003351, ''),
+('d2c9b866f1e29b49d50249765a780f6b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003355, ''),
+('df45d295a430fb9b74aaac2226f3144c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003343, ''),
+('f5920ad7c802443778ed28335a88af64', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003339, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment_product`
+--
+
+CREATE TABLE IF NOT EXISTS `comment_product` (
+  `id_comment` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title_comment` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content_comment` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `point` int(11) NOT NULL,
+  `create_date` int(11) NOT NULL,
+  PRIMARY KEY (`id_comment`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `comment_product`
+--
+
+INSERT INTO `comment_product` (`id_comment`, `name`, `title_comment`, `content_comment`, `id_product`, `point`, `create_date`) VALUES
+(1, '', 'ss', 'ss', 4, 1, 1405917261),
+(2, 'Nguyen Truong Giang', 'san pham tot', 'San pham kha tot', 4, 10, 1405917864);
 
 -- --------------------------------------------------------
 
@@ -316,12 +311,17 @@ INSERT INTO `payment` (`id`, `name`, `name_account`, `account_number`, `image`) 
 
 CREATE TABLE IF NOT EXISTS `product` (
   `id_product` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `id_cate` int(11) NOT NULL,
   `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `point` int(11) NOT NULL,
+  `count_rate` int(11) NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `stock` int(11) NOT NULL,
+  `view` int(11) NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id_product`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
@@ -330,24 +330,24 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id_product`, `title`, `content`, `id_cate`, `price`, `image`, `stock`, `create_date`) VALUES
-(1, 'Kem đánh răng người lớn', 'sss', 1, '160000', '068e80da9e71482db5912478760108dc.JPG', 10, 0),
-(2, 'Ủ tóc 300ml Ganier Fructis Oil repair 3', 'Giá khuyến mại	200,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Ganier Fructis\r\nMàu sắc	Mẫu mới màu vàng\r\nNơi sản xuất	Đức', 1, '200000', 'd61c6da7e8984bdaaaa8c0df6c72bc8a.jpg', 10, 0),
-(3, 'Kem dưỡng da Nivea 300ml', 'Giá khuyến mại	180,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	còn hàng\r\nNhãn hiệu	Nivea\r\nNơi sản xuất	Đức', 1, '180000', '862fdab67e1e4cc5aa3855b57ccc546f.png', 10, 0),
-(4, 'Bộ dầu gội đầu và kem xả Ganier Fructis', 'Giá bán	300,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Ganier Fructis\r\nNơi sản xuất	Đức', 1, '300000', '06dfaa02730146e8805ba02703e84388.JPG', 10, 0),
-(5, 'Kem dưỡng thể Lacoste', 'Giá bán	120,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Lacoste\r\nNơi sản xuất	Đức', 1, '120000', 'd5299d6cf30e4b2cb24aa3e42b3b01c7.JPG', 10, 0),
-(6, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(7, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(8, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(9, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(10, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(11, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(12, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(13, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
-(14, 'sss', '<p>ssssssssss</p>\n', 2, '111111', '58d2eca970d596818ad4855c85c1755e.jpg', 100, 1401946622),
-(15, 'ssss', '', 0, '0', '0', 100, 1402125763),
-(17, 's1 222', '<p>ssssss</p>\n', 1, '222222', '0498db6b5567c5d413a244d327eaa8b9.jpg', 100, 1402627782),
-(18, 'sssss', '<p>ssssssss</p>\n', 0, '0', '0', 100, 1404785963);
+INSERT INTO `product` (`id_product`, `code`, `type`, `title`, `content`, `id_cate`, `price`, `point`, `count_rate`, `image`, `stock`, `view`, `create_date`) VALUES
+(1, '', '', 'Kem đánh răng người lớn', 'sss', 1, '160000', 0, 0, '068e80da9e71482db5912478760108dc.JPG', 10, 112, 0),
+(2, '', '', 'Ủ tóc 300ml Ganier Fructis Oil repair 3', 'Giá khuyến mại	200,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Ganier Fructis\r\nMàu sắc	Mẫu mới màu vàng\r\nNơi sản xuất	Đức', 1, '200000', 0, 0, 'd61c6da7e8984bdaaaa8c0df6c72bc8a.jpg', 10, 112, 0),
+(3, '', '', 'Kem dưỡng da Nivea 300ml', 'Giá khuyến mại	180,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	còn hàng\r\nNhãn hiệu	Nivea\r\nNơi sản xuất	Đức', 1, '180000', 0, 0, '862fdab67e1e4cc5aa3855b57ccc546f.png', 10, 111, 0),
+(4, '', '', 'Bộ dầu gội đầu và kem xả Ganier Fructis', 'Giá bán	300,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Ganier Fructis\r\nNơi sản xuất	Đức', 1, '300000', 6, 2, '06dfaa02730146e8805ba02703e84388.JPG', 10, 138, 0),
+(5, '', '', 'Kem dưỡng thể Lacoste', 'Giá bán	120,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Lacoste\r\nNơi sản xuất	Đức', 1, '120000', 0, 0, 'd5299d6cf30e4b2cb24aa3e42b3b01c7.JPG', 10, 111, 0),
+(6, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(7, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(8, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(9, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(10, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(11, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(12, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(13, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(14, '', '', 'sss', '<p>ssssssssss</p>\n', 2, '111111', 0, 0, '58d2eca970d596818ad4855c85c1755e.jpg', 100, 0, 1401946622),
+(15, '', '', 'ssss', '', 0, '0', 0, 0, '0', 100, 0, 1402125763),
+(17, '', '', 's1 222', '<p>ssssss</p>\n', 1, '222222', 0, 0, '0498db6b5567c5d413a244d327eaa8b9.jpg', 100, 0, 1402627782),
+(18, '', '', 'sssss', '<p>ssssssss</p>\n', 0, '0', 0, 0, '0', 100, 0, 1404785963);
 
 -- --------------------------------------------------------
 
@@ -362,6 +362,8 @@ CREATE TABLE IF NOT EXISTS `sale_off` (
   `id_product` int(11) NOT NULL,
   `percent` int(11) NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `img_thumb` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `img_scroll` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `exp_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
@@ -370,8 +372,8 @@ CREATE TABLE IF NOT EXISTS `sale_off` (
 -- Dumping data for table `sale_off`
 --
 
-INSERT INTO `sale_off` (`id`, `title`, `content`, `id_product`, `percent`, `img`, `exp_date`) VALUES
-(10, 'Giảm giá ủ tóc', '<p>Giảm gi&aacute; ủ t&oacute;c</p>\n', 2, 10, '', '2014-06-07 00:00:00');
+INSERT INTO `sale_off` (`id`, `title`, `content`, `id_product`, `percent`, `img`, `img_thumb`, `img_scroll`, `exp_date`) VALUES
+(10, 'Giảm giá ủ tóc', '<p>Giảm gi&aacute; ủ t&oacute;c</p>\n', 2, 10, 'chuong-trinh-tang-be-boi.gif', '', 'best-slim-massage-giam-beo.gif', '2014-07-31 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -440,7 +442,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `yahoo`, `skype`, `bank`, `stk`, `sex`, `province`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `birthday`, `img`, `role`, `login_id`, `total_like`, `account_type`) VALUES
-(1, 'giangbeo', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$2a$08$av0xeUt7pYqEymtq0ENPN.65FaINVis/64LmuohuAdt8ND8exqVs2', 'nguyentruonggiang91@gmail.com', 1, '', '', '', '', 0, 79, 0, NULL, NULL, NULL, NULL, 'ad9147af77ea0a71cb1045eb8c144048', '127.0.0.1', '2014-07-08 04:08:01', '2014-03-21 08:25:47', '2014-07-08 02:08:01', '', '', 1, '', 0, 0),
+(1, 'giangbeo', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$2a$08$av0xeUt7pYqEymtq0ENPN.65FaINVis/64LmuohuAdt8ND8exqVs2', 'nguyentruonggiang91@gmail.com', 1, '', '', '', '', 0, 79, 0, NULL, NULL, NULL, NULL, 'ad9147af77ea0a71cb1045eb8c144048', '127.0.0.1', '2014-07-22 06:28:59', '2014-03-21 08:25:47', '2014-07-22 04:28:59', '', '', 1, '', 0, 0),
 (2, 'BeoBeBoi', 'Nguyên Trường Giang', '01667039939', 'HCM', '$2a$08$av0xeUt7pYqEymtq0ENPN.65FaINVis/64LmuohuAdt8ND8exqVs2', 'beobeboi91@gmail.com', 0, 's', 's', 'Vietcombank', '0341005245193', 0, 1, 0, NULL, NULL, NULL, NULL, 'ab37717509a2f5b5e6c4335e8e960710', '::1', '0000-00-00 00:00:00', '2014-03-27 16:59:43', '2014-03-28 04:13:34', '2014/03/05', '', 4, '', 0, 0);
 
 -- --------------------------------------------------------
