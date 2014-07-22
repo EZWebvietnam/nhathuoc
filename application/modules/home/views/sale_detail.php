@@ -31,7 +31,7 @@
 				</div>
 				<div class="print_mail">
 					<a href="javascript:print()" class="print">In</a>
-					<a href="mailto:admin@nhathuoc365.vn?body=http://nhathuoc365.vn/tin-khuyen-mai/giam-beo-toan-dien-tu-trong-ra-ngoai.html" class="mail">Gửi mail</a>
+					<a href="mailto:youremail@example.com?body=<?php echo full_url_($_SERVER);?>" class="mail">Gửi mail</a>
 				</div>
 				<script type="text/javascript"> var addthis_config = {"data_track_clickback":true};</script>
 				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dd331294ee7e605"></script>

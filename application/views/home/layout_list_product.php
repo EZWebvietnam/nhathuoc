@@ -65,7 +65,7 @@
 						<a href="/" target="_self" title="Logo"><img class="lazy" alt="Logo" src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo'];?>" /></a>
 					</div>
 					<div id="top_info">
-						<a href="" target="_blank" title="banner hotline"><img class="lazy" alt="banner hotline" src="/data/banner/ybi1369099847.gif" /></a>
+						<a href="" target="_blank" title="banner hotline"><img class="lazy" alt="banner hotline" src="<?php echo base_url();?>file/uploads/ybi1369099847.gif" /></a>
 					</div>
 					<!--end #top_info-->	
 					<div id="cart_user">
@@ -134,7 +134,7 @@
 				<div id="search_hot_line">
 					<div id="box_search">
 						<div>
-							<form name="frmSearch" action="/tim-kiem.html" method="get">				
+							<form name="frmSearch" action="<?php echo base_url();?>tim-kiem" method="get">				
 								<input type="text" id="txtSearch" name="txtSearch" onfocus="if(this.value=='Từ khóa tìm kiếm') this.value=''" onblur="if(this.value=='') this.value='Từ khóa tìm kiếm'" value="Từ khóa tìm kiếm" /> 
 							</form>
 						</div>
@@ -159,10 +159,12 @@
 					</div>
 					<!--end #search_hot_line_spacer-->
 					<div id="hot_line">
-						<div class="hot_line_label"><span>Bạn đã có mã giảm giá?</a></span></div>
+						<div class="hot_line_label"><span>Tra cứu thông tin đơn hàng?</span></div>
 						<div class="pro_code">
-							<div class="d_code"><input type="text" name="promotionCode" id="promotionCode" value=""></div>
-							<div class="s_code"><a id="addPromotionCode" href="#">OK</a></div>
+						<form method="get" action="<?php echo base_url();?>tinh-trang-don-hang" target="_blank" name="tracuu">
+							<div class="d_code"><input type="text" name="code" id="code" value="" placeholder="Mã đơn hàng"></div>
+							<div class="s_code"><a href="javascript:void(0)" onclick="document.tracuu.submit()">OK</a></div>
+						</form>
 						</div>
 					</div>
 					<!--end #hot_line-->
@@ -230,150 +232,7 @@
 						<!--end #box_menu_last-->
 					</div>
 					<!--end #side_content-->
-					<div id="main_content">
-						<div id="nav_link">
-							<a href="/">Trang chủ</a><span> &gt; </span><a href="/nhom-hang.html">Sản phẩm</a><span> &gt; </span><a href="<?php echo full_url_($_SERVER);?>" class=""><?php echo $cate_detail_[0]['title']?></a>
-						</div>
-						<!--end #nav_link-->		 
-						<div class="clear"><img height="7px" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-						<div class="product_list">
-							
-							
-							<!--end #hot_product-->
-							<div class="clear"><img height="15px" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-							<div class="main_title">
-								<div class="main_title_l"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-								<div class="main_title_m">
-									<div class="count_pro"><span>Tổng số 38</span></div>
-									
-									<!--end .quantity_display-->
-									
-									<!--end .display_order-->
-								</div>
-								<!--end .main_title_m-->
-								<div class="main_title_r"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-							</div>
-							<!--end #main_title-->
-						
-							<!--end .product_cat_item-->
-							<?php 
-							foreach($list as $product)
-							{
-							?>
-							<div class="product_cat_item">
-								<a class="thumb" href="<?php echo base_url();?>san-pham/<?php echo $product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product['title_product'])))?>" title="<?php echo $product['title_product']?>">
-								<?php 
-								if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product['image']) && $product['image']!='')
-								{
-								
-								?>
-								<img class="lazy" src="<?php echo base_url();?>file/uploads/product/<?php echo $product['image']?>" alt="<?php echo $product['title_product']?>" />
-								<?php } else { ?>
-								<img class="lazy" src="<?php echo base_url();?>file/uploads/no_image.gif" alt="<?php echo $product['title_product']?>" />
-								<?php } ?>
-								</a>
-								<div class="product_cat_item_teaser">
-									<a class="blue_product" href="<?php echo base_url();?>san-pham/<?php echo $product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product['title_product'])))?>"><?php echo $product['title_product']?></a>
-									<div class="clear"></div>
-									<div class="clear"></div>
-									<div><span style="float:left;">Nhà sản xuất:&nbsp;</span><span><a class="blue_supplier" style="float:left;" href="/thuong-hieu/cong-ty-vossen-bi.html">Công ty Vossen - Bỉ</a></span></div>
-									<div class="clear"></div>
-									<div><span>Nhà phân phối:&nbsp;</span><span>An Organics</span></div>
-									<div class="clear"></div>
-									<span>MT:&nbsp;CB02 • Gồm 2 lọ</span>
-									<div class="clear"></div>
-									<div class="pro_favi" rel="<?php echo $product['point']?>" title="<?php echo $product['id_product']?>">
-										<div class="rate" id="proRate_<?php echo $product['id_product']?>"></div>
-										<div class="comment"><span>(2 nhận xét)</span></div>
-									</div>
-									<!--end .pro_favi-->
-									<div class="clear"></div>
-									<div class="item_info"><span>Còn hàng</span><a class="quickview" href="#" rel="<?php echo $product['id_product']?>">Xem thông tin nhanh</a></div>
-								</div>
-								<!--end .product_cat_item_info-->
-								<div class="product_cat_item_sale_off">
-								<?php 
-								$sale_detail = $this->producthomemodel->get_sale_off_product($product['id_product']);
-								if(!empty($sale_detail))
-								{
-								?>
-								
-									<span>Sale - <?php echo $sale_detail[0]['percent']?>% Off</span>				
-							
-								<?php } ?>
-									</div>
-								<div class="product_cat_item_tool">
-									<div class="price">
-										<?php 
-										if(!empty($sale_detail))
-										{
-											$price = $product['price'] - ($product['price']*($sale_detail[0]['percent']/100));
-										?>
-										<span class="b">Giá niêm yết:&nbsp;</span> <span class="black lt"><?php echo number_format($product['price']);?> ₫</span>
-										<div class="clear"><img height="7" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-										<span class="b">Giá bán:&nbsp;</span> <span class="red"><?php echo number_format($price);?> ₫</span>												<?php } else { ?>
-										<span class="b">Giá bán:&nbsp;</span> <span class="red"><?php echo number_format($product['price']);?> ₫</span>
-										<?php } ?>
-									</div>
-									<a class="add_cart" href="#" rel="<?php echo $product['id_product']?>" title="Mua hàng"><span>Mua hàng</span></a>
-									<a class="add_fav" href="#" rel="<?php echo $product['id_product']?>"><span>Sản phẩm yêu thích</span></a>
-									<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-									
-									<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-								</div>
-								<!--end .product_cat_item_tool-->
-								<!-- product tip -->
-								<div id="tip_<?php echo $product['id_product']?>" class="hide">
-									<div class="product_tip">
-										<div class="thumb">
-										<?php 
-										if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product['image']) && $product['image']!='')
-										{
-										
-										?>
-										<img  src="<?php echo base_url();?>file/uploads/product/<?php echo $product['image']?>" alt="<?php echo $product['title_product']?>" />
-										<?php } else { ?>
-										<img  src="<?php echo base_url();?>file/uploads/no_image.gif" alt="<?php echo $product['title_product']?>" />
-										<?php } ?>
-										</div>
-										<div class="info">
-											<p><?php echo sub_string(loaibohtmltrongvanban($product['content']),100);?></p>
-										</div>
-										<div class="clear"></div>
-									</div>
-									<!--end .product_tip-->
-								</div>
-								<!-- end .#tip_ -->
-								<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-							</div>
-							<?php } ?>
-							<!--end .product_cat_item-->
-							<div class="main_title">
-								<div class="main_title_l"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-								<div class="main_title_m">
-									<div class="count_pro"><span>Sản phẩm 1-25 trong tổng số 38</span></div>
-									<div class="page_pro">
-										<div id="page_break">
-											<script type="text/javascript">
-												var url = window.location.href;
-												var res = url.split("/page/");
-									                                $(function() {
-									                                    $('div#page_break').html(LoadPagging(<?php echo $page?>, <?php echo $total?>,res[0],<?php echo $total_page?>));
-									                                });
-									                            </script>
-										</div>
-									</div>
-								</div>
-								<!--end .main_title_m-->
-								<div class="main_title_r"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-							</div>
-							<!--end #main_title-->
-							<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-							<a id="go_top" href="#" >Lên đầu trang</a>
-							<div class="clear"></div>
-						</div>
-						<div class="clear"><img height="10px" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
-					</div>
+					<?php echo $this->load->view($main_content);?>
 					<!--end #main_content-->
 					<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
 				</div>
@@ -384,37 +243,33 @@
 						<div id="footer_menu_main">
 							<div class="footer_menu_sub border_right">
 								<span class="title">Về chúng tôi</span>
-								<a class="link" rel="follow" href="/gioi-thieu/gioi-thieu.html" target="_self">Giới thiệu</a>
-								<a class="link" rel="nofollow" href="/gioi-thieu/huong-dan-mua-hang.html" target="_self">Hướng dẫn mua hàng</a>
-								<a class="link" rel="nofollow" href="/gioi-thieu/hinh-thuc-thanh-toan.html" target="_self">Hình thức thanh toán</a>
-								<a class="link" rel="" href="/gioi-thieu/chinh-sach-van-chuyen.html" target="_self">Chính sách vận chuyển</a>
-								<a class="link" rel="nofollow" href="/gioi-thieu/quy-dinh-su-dung.html" target="_self">Quy định sử dụng</a>
-								<a class="link" rel="nofollow" href="/gioi-thieu/chinh-sach-doi-hang.html" target="_self">Chính sách đổi hàng</a>
-								<a class="link" rel="nofollow" href="/gioi-thieu/cau-hoi-thuong-gap.html" target="_self">Câu hỏi thường gặp</a>
-								<a class="link" rel="" href="/gioi-thieu/quye-loi-thanh-vien.html" target="_self">Quyền lợi khách hàng</a>
-								<a class="link" rel="follow" href="/gioi-thieu/chinh-sach-bao-mat.html" target="_self">Chính sách bảo mật</a>
+								<a class="link" rel="follow" href="<?php echo base_url();?>gioi-thieu" target="_self">Giới thiệu</a>
+								<a class="link" rel="nofollow" href="<?php echo base_url();?>huong-dan-thanh-toan" target="_self">Hướng dẫn thanh toán</a>
+								<a class="link" rel="nofollow" href="<?php echo base_url();?>lien-he" target="_self">Liên hệ</a>
+								
 							</div>
 							<!--end .footer_menu_sub-->
 							<div class="footer_menu_sub border_right">
-								<span class="title">Nhóm sản phẩm tiêu biểu</span>
-								<a class="link" rel="" href="/vitamins-acid-amin-va-khoang-chat.html" target="_self">Vitamins và Khoáng chất</a>
-								<a class="link" rel="" href="/xuong-khop.html" target="_self">Điều trị xương khớp</a>
-								<a class="link" rel="" href="/thuc-pham-giam-can-an-kieng.html" target="_self">Thực phẩm giảm cân</a>
-								<a class="link" rel="" href="/lam-dep-chong-lao-hoa.html" target="_self">Làm đẹp - Chống lão hóa</a>
-								<a class="link" rel="" href="/suc-khoe-sinh-ly-nam.html" target="_self">Sức khỏe - sinh lý nam</a>
-								<a class="link" rel="" href="/suc-khoe-sinh-ly-nu.html" target="_self">SK - Sinh lý nữ</a>
-								<a class="link" rel="" href="/ho-tro-tuan-hoan-nao.html" target="_self">Hỗ trợ tuần hoàn não</a>
+								<span class="title">Nhóm sản phẩm</span>
+								<?php 
+								foreach($list_cate_home as $cate_home)
+								{
+								?>
+								<a class="link" rel="" href="<?php echo base_url();?>san-pham/c/<?php echo $cate_home['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_home['title'])));?>" target="_self"><?php echo $cate_home['title']?></a>
+								<?php }  ?>
+								
 							</div>
 							<!--end .footer_menu_sub-->
 							<div class="footer_menu_sub border_right">
-								<span class="title">Thương hiệu phổ biến</span>
-								<a class="link" rel="" href="/thuong-hieu/nature-plus-my.html" target="_self">Nature 's Plus</a>
-								<a class="link" rel="" href="/thuong-hieu/vitamins-for-life-my.html" target="_self">Vitamins For Life</a>
-								<a class="link" rel="" href="/thuong-hieu/swanson-my.html" target="_self">Swanson</a>
-								<a class="link" rel="" href="nowfoods-my.html" target="_self">Now Foods</a>
-								<a class="link" rel="" href="/thuong-hieu//nhat-nhat.html" target="_self">Nhất Nhất</a>
-								<a class="link" rel="" href="/thuong-hieu/traphaco.html" target="_self">Traphaco</a>
-								<a class="link" rel="" href="/thuong-hieu/sao-thai-duong-212.html" target="_self">Sao Thái Dương</a>
+								<span class="title">Thống kê truy cập</span>
+								<!-- Histats.com  START  (standard)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="hits counter" ><script  type="text/javascript" >
+try {Histats.start(1,2736506,4,432,112,75,"00011111");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2736506&101" alt="hits counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
 							</div>
 							<!--end .footer_menu_sub-->
 							<div class="footer_menu_facebook">
@@ -427,7 +282,7 @@
 									fjs.parentNode.insertBefore(js, fjs);
 									}(document, 'script', 'facebook-jssdk'));
 								</script>
-								<div class="fb-like-box" data-href="https://www.facebook.com/Nhathuoc365" data-width="368" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+								<div class="fb-like-box" data-href="https://www.facebook.com/ezwebvietnam" data-width="368" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
 								<div class="clear"></div>
 							</div>
 							<!--end .footer_menu_facebook-->
@@ -541,46 +396,7 @@
 				</div>
 				<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/js/jquery.cookie.js"></script>
 				<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/js/popup.js"></script>
-				<script type="text/javascript">
-					var _gaq = _gaq || [];
-					_gaq.push(['_setAccount', 'UA-34754356-1']);
-					_gaq.push(['_trackPageview']);
-					
-					(function() {
-					  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-					  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-					  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-					})();
-				</script>
-				<!-- Google Code for Th&#7867; ti&#7871;p th&#7883; l&#7841;i -->
-				<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
-				<script type="text/javascript">
-					/* <![CDATA[ */
-					var google_conversion_id = 998389176;
-					var google_conversion_label = "DjbkCOj1-gMQuOuI3AM";
-					var google_custom_params = window.google_tag_params;
-					var google_remarketing_only = true;
-					/* ]]> */
-				</script>
-				<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-				<noscript>
-					<div style="display:inline;">
-						<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/998389176/?value=0&amp;label=DjbkCOj1-gMQuOuI3AM&amp;guid=ON&amp;script=0"/>
-					</div>
-				</noscript>
-				<script type="text/javascript">
-					/* <![CDATA[ */
-					var google_conversion_id = 996270588;
-					var google_custom_params = window.google_tag_params;
-					var google_remarketing_only = true;
-					/* ]]> */
-				</script>
-				<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-				<noscript>
-					<div style="display:inline;">
-						<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/996270588/?value=0&amp;guid=ON&amp;script=0"/>
-					</div>
-				</noscript>
+				
 			</div>
 			<!--end #wrapper-->
 		</div>

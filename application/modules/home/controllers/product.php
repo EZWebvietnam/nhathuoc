@@ -135,6 +135,7 @@ class Product extends MY_Controller
 		$this->data['page'] = $page;
 		$this->data['total'] = $config['total_rows'];
 		$this->data['list'] = $array_sv;
+		$this->data['main_content'] = 'list_product_view';
 		$this->load->view('home/layout_list_product',$this->data);
 	}
 	
@@ -163,11 +164,12 @@ class Product extends MY_Controller
 		$this->data['page'] = $page;
 		$this->data['total'] = $config['total_rows'];
 		$this->data['list'] = $array_sv;
+		$this->data['main_content'] = 'list_product_view';
 		$this->load->view('home/layout_list_product',$this->data);
 	}
 	public function list_product_search()
 	{
-		$key = $_GET['key'];
+		$key = $_GET['txtSearch'];
 		$this->load->helper('url');
 		$config['uri_segment'] = 5;
 		$page = $this->uri->segment(3);
@@ -189,6 +191,7 @@ class Product extends MY_Controller
 		$this->data['page'] = $page;
 		$this->data['total'] = $config['total_rows'];
 		$this->data['list'] = $array_sv;
+		$this->data['main_content'] = 'list_product_view';
 		$this->load->view('home/layout_list_product',$this->data);
 	}
 	public function cart()
@@ -456,7 +459,7 @@ class Product extends MY_Controller
 				}
 				case 'payment':
 				{
-					
+					$code = rand_string(6);
 					if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 						$ip = $_SERVER['HTTP_CLIENT_IP'];
 					}
@@ -481,16 +484,25 @@ class Product extends MY_Controller
 					}
 					
 					//$total_money_cart = $total_money_cart + $total_fee;
-					$data_insert      = array('full_name'        =>$fullname,'address'          =>$address,'phone'            =>$phone,'email'            =>$email,'status'           =>0,'create_date'      =>strtotime('now'),'total_price_order'=>$total_money_cart,'note'=>$note);
+					$data_insert      = array('full_name'        =>$fullname,'address'          =>$address,'phone'            =>$phone,'email'            =>$email,'status'           =>0,'create_date'      =>strtotime('now'),'total_price_order'=>$total_money_cart,'note'=>$note,'code'=>$code);
 					$id_order = $this->orderhomemodel->insert_order($data_insert);
 					foreach($list_cart as $value)
 					{
-						$data_save_order_detail = array('id_product' =>$value['id_product'],'quantity'   =>$value['quantity'],'price'      =>$value['price'],'ip_user'    =>$ip,'order_id'   =>$id_order,'create_date'=>strtotime('now'));
+						$detail_sale = $this->producthomemodel->get_sale_off_product($value['id_product']);
+						if(empty($detail_sale))
+						{
+							$price = $value['price'];
+						}
+						else
+						{
+							$price = $value['price'] -  $value['price']*($detail_sale[0]['percent']/100);	
+						}
+						$data_save_order_detail = array('id_product' =>$value['id_product'],'quantity'   =>$value['quantity'],'price'      =>$price,'ip_user'    =>$ip,'order_id'   =>$id_order,'create_date'=>strtotime('now'));
 						$this->orderhomemodel->insert_order_detail($data_save_order_detail);
 						$data_save_order_detail = array();
 					}
 					$this->cartmodel->delete_cart_ip($ip);
-					echo json_encode(array('error'=>false,'message'=>'Thành công, vui lòng chờ confirm','url'=>'http://localhost/nhathuoc/gio-hang'));
+					echo json_encode(array('error'=>false,'message'=>'Thành công, vui lòng chờ confirm','url'=>'http://localhost/nhathuoc/thanh-cong?code='.$code));
 					break;	
 				}
 				case 'updateAll ':
@@ -525,6 +537,30 @@ class Product extends MY_Controller
 					$id_product = $this->input->post('pID');
 					$this->cartmodel->delete_cart($ip,$id_product);
 					echo json_encode(array('error'=>false,'message'=>'Xóa thành công','url'=>'http://localhost/nhathuoc/gio-hang'));
+					break;
+				}
+				case 'reg_newsletter':
+				{
+					$email = $this->input->post('email');
+					$email_check = $this->producthomemodel->check_mail($email);
+					if($email_check){
+						
+						echo json_encode(array('error'=>false,'message'=>'Đăng ký thành công','url'=>'http://localhost/nhathuoc'));
+					}
+					else
+					{
+						$data_new = array('email'=>$email,'create_date'=>strtotime('now'));
+						$id = $this->producthomemodel->insert_newsletter($data_new);	
+						if($id>0)
+						{
+							echo json_encode(array('error'=>false,'message'=>'Đăng ký thành công','url'=>'http://localhost/nhathuoc'));
+						}
+						else
+						{
+							echo json_encode(array('error'=>true,'message'=>'Đăng ký thất bại','url'=>'http://localhost/nhathuoc'));	
+						}
+					}
+					break;	
 				}
 			}
 			
@@ -542,6 +578,20 @@ class Product extends MY_Controller
 			$this->data['url'] = $this->input->get('url');
 			$this->load->view('comment_view',$this->data);
 		}	
+	}
+	public function thanh_cong()
+	{
+		$this->data['main_content'] = 'thanh_cong';
+		$this->load->view('home/layout_list_product',$this->data);
+	}
+	public function view_order()
+	{
+		$this->load->model('orderhomemodel');
+		$code = $_GET['code'];
+		$order_detail = $this->orderhomemodel->get_order_code($code);	
+		$this->data['main_content'] = 'view_order';
+		$this->data['order_detail'] = $order_detail;
+		$this->load->view('home/layout_list_product',$this->data);
 	}
 }
 ?>

@@ -24,5 +24,11 @@ class Orderhomemodel extends CI_Model
 		$query = $this->db->get('payment');
 		return $query->result_array();
 	}
+	public function get_order_code($code)
+	{
+		$sql="SELECT *,order_detail.price as price_order FROM order_customer INNER JOIN order_detail ON order_customer.id = order_detail.order_id INNER JOIN product ON product.id_product = order_detail.id_product WHERE order_customer.code = ?";
+		$query = $this->db->query($sql,array($code));
+		return $query->result_array();
+	}
 }
 ?>

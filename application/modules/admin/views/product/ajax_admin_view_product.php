@@ -34,6 +34,12 @@
                 </td>
             </tr>
             <tr>
+                <td class="label">Dạng bào chế </td>
+                <td colspan="3">
+                    <?php echo $detail_product[0]['type'] ?>
+                </td>
+            </tr>
+            <tr>
                 <td class="label">Giá</td>
                 <td colspan="3">
                     <?php echo $detail_product[0]['price'] ?>

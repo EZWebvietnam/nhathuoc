@@ -157,7 +157,8 @@ class Productadmin extends MY_Controller {
 				'create_date'=>strtotime('now'),
 				'id_cate'=>$this->input->post('category'),
 				'code'=>$this->input->post('code'),
-				'manu'=>$this->input->post('manu')
+				'manu'=>$this->input->post('manu'),
+				'type'=>$this->input->post('type')
 				
             );
 			if($this->input->post('file')!='')
@@ -234,7 +235,8 @@ class Productadmin extends MY_Controller {
                     'image' => $file,
 					'id_cate'=>$this->input->post('category'),
 					'code'=>$this->input->post('code'),
-				'manu'=>$this->input->post('manu')
+				'manu'=>$this->input->post('manu'),
+				'type'=>$this->input->post('type')
                 );
             } else {
                 $data_save = array(
@@ -243,7 +245,8 @@ class Productadmin extends MY_Controller {
                     'content' => $this->input->post('content'),
 					'id_cate'=>$this->input->post('category'),
 					'code'=>$this->input->post('code'),
-				'manu'=>$this->input->post('manu')
+					'manu'=>$this->input->post('manu'),
+					'type'=>$this->input->post('type')
                 );
             }
             $this->productmodel->update_product($id, $data_save);

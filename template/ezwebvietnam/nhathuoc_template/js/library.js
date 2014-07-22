@@ -941,7 +941,7 @@ function regNewsletter()
 		url : base_url+'ajax.html',
 		dataType : 'json',
 		data: {action:'reg_newsletter',txtMail:$('#txtMail').val(),new_promotion:new_promotion,new_research:new_research,new_tips:new_tips,url:$('#url_newsletter').val()},
-		success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href','/vn/');}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
+		success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
 		error : function(XMLHttpRequest, textStatus, errorThrown) {Boxy.alert('Có lỗi trong quá trình đưa lên máy chủ. Xin bạn vui lòng kiểm tra lại kết nối.',function(){},{title:'Thông báo.',afterShow: function() {$('#boxy_button_OK').focus();}});}
 	});
 }
@@ -963,7 +963,7 @@ function validateNewsletter(obj){
 		url: base_url+'ajax.html',
 		dataType: 'json',
 		data:regData,
-		success: function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href','/vn/');}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
+		success: function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {}
 	});
 	return false;

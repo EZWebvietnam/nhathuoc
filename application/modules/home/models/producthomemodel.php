@@ -164,5 +164,16 @@ class Producthomemodel extends CI_Model
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+	public function insert_newsletter(array $data)
+	{
+		$this->db->insert('newsletter',$data);
+		return $this->db->insert_id();	
+	}
+	public function check_mail($email)
+	{
+		$sql="SELECT * FROM newsletter WHERE email = '%$email%'";
+		$query = $this->db->query($sql);
+		return count($query->result_array());	
+	}
 }
 ?>

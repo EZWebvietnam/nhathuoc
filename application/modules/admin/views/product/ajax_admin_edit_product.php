@@ -34,6 +34,12 @@
                     <input id="manu" type="text" value="<?php echo $detail_product[0]['manu'] ?>" name="manu"/>
                 </td>
             </tr>
+             <tr>
+                <td class="label">Dạng bào chế</td>
+                <td colspan="3">
+                    <input id="type" type="text" value="<?php echo $detail_product[0]['type'] ?>" name="type"/>
+                </td>
+            </tr>
 			<tr>
                 <td class="label">Giá</td>
                 <td colspan="3">
@@ -110,7 +116,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title').val(),category:$('#id_category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content,code:$('#code').val(),manu:$('#manu').val(),luu_y:$('#luu_y').val()},
+                    data: {title:$('#title').val(),category:$('#id_category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content,code:$('#code').val(),manu:$('#manu').val(),type:$('#type').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,
