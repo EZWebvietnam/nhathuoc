@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2014 at 06:45 AM
+-- Generation Time: Jul 22, 2014 at 10:34 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -111,38 +111,81 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('011962a1f4ffdf596bed38af3b881020', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004115, ''),
-('01d248cb4fa4b0e7f1e6ff80c1fb0c88', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003835, ''),
-('057f215b4c86fc28cd346973cebc1a28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003833, ''),
-('1161fe3023e32c6228525d852483f9d1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004117, ''),
-('1bd6551b42f6fd68cad8374a100b970c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003359, ''),
-('1de2bba7ea0a8c5406443914186ccda1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003406, ''),
-('1ff55326a656d8e0a0d9aee96ae97c72', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003992, ''),
-('22415f82c050fd1bd936088acfe123f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003364, ''),
-('22aaae58e842efadcb2ef98a3b88f7cd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003841, ''),
-('3042faf98e25e1988ed606ceb86cc8d7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003847, ''),
-('4ec2b789519e91104d83cba36057a527', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003330, ''),
-('5a6c39e0b25b3451b1acf48070f5ce92', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003358, ''),
-('62519ddead2b1c0bb047eab55a9a99bc', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003400, ''),
-('63a51d97cd96801e9e6413e6449b5d3b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004105, ''),
-('66607039e21055f08dca33dc4366e3f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003407, ''),
-('6a2faee43fcc9da93d51dea09c05cd4d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003349, ''),
-('6e6c053ba904af168e87bd41105485d6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004124, ''),
-('71c36eb71f568eb7fd205fef3808769a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003367, ''),
-('7d4e73f7ca7cc2f5d0319a593c9303ef', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003640, ''),
-('a392cabb33a1287cb53578b9b7b080a8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003351, ''),
-('a47e00b970a970a9cc82ac941087c31c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004107, ''),
-('c008cbf22d8ef017000b76d328ef1ca5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003839, ''),
-('d2c9b866f1e29b49d50249765a780f6b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003355, ''),
-('d4a4b5b99d0de85fd198b38d8c117e80', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003995, ''),
-('d7aada09ddfaaf3ef5b4ae3f6e2c04b4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003642, ''),
-('d97832f4dc25df80f204192498130144', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003996, ''),
-('de4cd952de7aea56403be6f838655c67', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004115, ''),
-('df45d295a430fb9b74aaac2226f3144c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003343, ''),
-('e52cbdc7f708609f1560de84db8f36d4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004124, ''),
-('f5920ad7c802443778ed28335a88af64', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003339, ''),
-('f72bd5293082e8298f29d5dfa2e5280a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003839, ''),
-('f94d1ee75c3f45e2b69b7ffc88841c3e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003847, '');
+('03ffd3fe29f90697e3c231c6e5377be2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011087, ''),
+('08235922e86581e6f1da3a3647002ea3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011960, ''),
+('08a9dc8acaae08e0a63b9af912689b91', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014461, ''),
+('09691c8c1e05493ba70ba0da6409b4e9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017695, ''),
+('09701d93189389ea3f92b9e7ba7e08c8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017397, ''),
+('20eb9c4aa5419f75557746851e1a9c22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014022, ''),
+('2320171569ee3d831a71bdedd13d83e6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011529, ''),
+('264fe2671f3dc8d3b8b3ea445f10b660', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017679, ''),
+('29eb659927df349cbca4097651d409b2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406010973, ''),
+('2e349303e0e404427e70fda298f24240', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013235, ''),
+('31ba8ad743e7684a57a6ad9667fa697f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014432, ''),
+('332d8c72865da6d32e7dc81f6fc953cb', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012057, ''),
+('3539b3f590a8c718feabdf29dc85ed02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011124, ''),
+('3fe1a863fdb1e75934574ecfd2e96b42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017207, ''),
+('48e3690c678257e999a5d244bf79dcc2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013928, ''),
+('4958a2adf295dadf0d03c6b9b717d7e7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011032, ''),
+('4a1f214b8c2a608d5c34a54a14f8d02e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013616, ''),
+('50dcaa5502499c284598b5e483d92432', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017211, ''),
+('5862e4f56833dd41846597ae524bac24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017673, ''),
+('628f4759822e0d4284dab4414c155c67', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013503, ''),
+('6437a00275f073e8ecf3c6a4269440ae', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013493, ''),
+('67c8938b19e76310a143d901d80c5aca', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014102, ''),
+('6c55c3af0111f34c16cb49979aba5ef9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011533, ''),
+('6d09c88683397b4f40cb86867c2e4f8f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013946, ''),
+('733b86fca9118ae7515cfb60212c79d6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012052, ''),
+('755b3b934738c38d2814ca1300b9f4cc', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013860, ''),
+('7f2631c332645280a95db27b62ad4ca2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013657, ''),
+('7f642de5bd1cffd9de601a2cfe4bb01e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011969, ''),
+('81304c2ed58d904c48aaaea3dc90ab66', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011030, ''),
+('8bbde4067903f06c33d71c30e1593b4e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011069, ''),
+('8d289936bdeb5cddcb508859b1ee8c3a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011510, ''),
+('8e4eab98450836835c3d3882a3d62dd7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017208, ''),
+('8f419b99ff93f85e8eea5d2ed132f822', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013848, ''),
+('90e0f684898326d93251d039ffe25c27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014039, ''),
+('93cb41e16aa7a04ac04ff1c4c76ab96e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012564, ''),
+('a0b107e0c00b84ac28fb3024e3fc90dd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017681, ''),
+('a10237f38210d47f204e7b6a9d628dc5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011535, ''),
+('a5dc094f89ea8e88274b8d34226a6fcd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011069, ''),
+('a6d9d7f004877b5873462c0b2333ddd7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013851, ''),
+('a8029cf6c311042d320f8fe67d7e065b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011073, ''),
+('b0b8de358ce509c63fb465582415aab0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017040, ''),
+('b2481b75f4d606488bcc6de5f51bbd72', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014104, ''),
+('b2d060ba9e3fb968177c7d1269c274c2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017696, ''),
+('b2d1922e43bd2f32e6d0da6bcc652aae', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017306, ''),
+('b36913b978ef625fe06c7ee5123ddf31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017218, ''),
+('b48264ccba40ae34f75ed602a9257bdb', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011535, ''),
+('bbe0fecfc198fd0989eb479fc14ac548', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012058, ''),
+('beeec99b5b03f6ee09630f403a279fb5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012148, ''),
+('c077a41221b3aeca5199e996a7ae66bd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013219, ''),
+('c0c0e9759fb210142affb2e05539b327', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017021, ''),
+('c144e85ff6edec03e503e2f6f6b225f5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011740, ''),
+('c3408ec070afe299d2f91442ca970c7c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017019, ''),
+('c8fc8fd35d559e1d01bf2f2f1f486647', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013663, ''),
+('cbe54e5faa6a5bd36eb4f57157934813', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012144, ''),
+('d080431a124b4a090bffaaa6c07d8398', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406010974, ''),
+('d0ba72d5e44715acd00b80dd4540fb5b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013949, ''),
+('d189ebb4e926130d28983d574d1fa33c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011954, ''),
+('d40a44a08c6b19e23b4cbac90bfa5970', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013191, ''),
+('d4b0e84cd9b0899bd2fa175b09bc0bdf', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012567, ''),
+('ddfeb49e2e866fa0ee05a8191a700546', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014463, ''),
+('deef6cfdf3a0e7efcddc04b720bd23d6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017004, ''),
+('e12fc2dd221ed6688424355a0bbdfb87', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013663, ''),
+('e34acc18ee965c0cf41c31e6d1fc7a25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014436, ''),
+('e36c5ba62675f0286e52627c28cc30dc', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017674, ''),
+('e922079079dcc8f2857dc8a6f5b3ae8b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017377, ''),
+('ea37e282d39e4343ddafed52151cda3f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017260, ''),
+('ea4981d8d0796be27a9b249e339b9cdb', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012150, ''),
+('eca142bfe7ee2194e3e6429071740619', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011508, ''),
+('efe1c76512b1a87d90459607b1d145e4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011967, ''),
+('f06d80320e99efd5dc5c64908e9f4968', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011958, ''),
+('f1a9f4dbd83b1ead632eda693a579dbd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013220, ''),
+('f8879fcc185fe717ee1d0f93f98987f8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014432, ''),
+('f8f3ae6d093de99dfaf87cec1389dfd2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013856, ''),
+('fa7676d4e0a82b7b6aa1cbaa90ffec11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017000, ''),
+('fb9c7b653e20cb65372797dc60256bf1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013846, '');
 
 -- --------------------------------------------------------
 
@@ -192,6 +235,26 @@ INSERT INTO `cong_dung` (`id_cd`, `title_cd`, `content_cd`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `description`
+--
+
+CREATE TABLE IF NOT EXISTS `description` (
+  `id_about` int(11) NOT NULL AUTO_INCREMENT,
+  `title_about` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content_about` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_about`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `description`
+--
+
+INSERT INTO `description` (`id_about`, `title_about`, `content_about`) VALUES
+(1, 'Giới thiệu', 'ssss');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `faq`
 --
 
@@ -225,9 +288,18 @@ INSERT INTO `faq` (`id`, `name`, `title`, `email`, `question`, `answer`, `status
 
 CREATE TABLE IF NOT EXISTS `image` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `url` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `image`
+--
+
+INSERT INTO `image` (`id`, `title`, `image`, `url`) VALUES
+(1, '0', '73384244d4c26746d19d85465bf3e787.jpg', '0');
 
 -- --------------------------------------------------------
 
@@ -350,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 INSERT INTO `product` (`id_product`, `code`, `type`, `title`, `content`, `id_cate`, `price`, `point`, `count_rate`, `image`, `stock`, `view`, `create_date`) VALUES
 (1, '', '', 'Kem đánh răng người lớn', 'sss', 1, '160000', 0, 0, '068e80da9e71482db5912478760108dc.JPG', 10, 112, 0),
-(2, '', '', 'Ủ tóc 300ml Ganier Fructis Oil repair 3', 'Giá khuyến mại	200,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Ganier Fructis\r\nMàu sắc	Mẫu mới màu vàng\r\nNơi sản xuất	Đức', 1, '200000', 0, 0, 'd61c6da7e8984bdaaaa8c0df6c72bc8a.jpg', 10, 112, 0),
+(2, '', '', 'Ủ tóc 300ml Ganier Fructis Oil repair 3', 'Giá khuyến mại	200,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Ganier Fructis\r\nMàu sắc	Mẫu mới màu vàng\r\nNơi sản xuất	Đức', 1, '200000', 0, 0, 'd61c6da7e8984bdaaaa8c0df6c72bc8a.jpg', 10, 114, 0),
 (3, '', '', 'Kem dưỡng da Nivea 300ml', 'Giá khuyến mại	180,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	còn hàng\r\nNhãn hiệu	Nivea\r\nNơi sản xuất	Đức', 1, '180000', 0, 0, '862fdab67e1e4cc5aa3855b57ccc546f.png', 10, 111, 0),
 (4, '', '', 'Bộ dầu gội đầu và kem xả Ganier Fructis', 'Giá bán	300,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Ganier Fructis\r\nNơi sản xuất	Đức', 1, '300000', 6, 2, '06dfaa02730146e8805ba02703e84388.JPG', 10, 138, 0),
 (5, '', '', 'Kem dưỡng thể Lacoste', 'Giá bán	120,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Lacoste\r\nNơi sản xuất	Đức', 1, '120000', 0, 0, 'd5299d6cf30e4b2cb24aa3e42b3b01c7.JPG', 10, 111, 0),
@@ -391,7 +463,7 @@ CREATE TABLE IF NOT EXISTS `sale_off` (
 --
 
 INSERT INTO `sale_off` (`id`, `title`, `content`, `id_product`, `percent`, `img`, `img_thumb`, `img_scroll`, `exp_date`) VALUES
-(10, 'Giảm giá ủ tóc', '<p>Giảm gi&aacute; ủ t&oacute;c</p>\n', 2, 10, 'chuong-trinh-tang-be-boi.gif', '', 'best-slim-massage-giam-beo.gif', '2014-07-31 00:00:00');
+(10, 'Giảm giá ủ tóc', '<p>Giảm gi&aacute; ủ t&oacute;c</p>\n', 2, 10, 'chuong-trinh-tang-be-boi.gif', 'fb166ef03b2b866e9b5b4907dd94a7ff.jpg', 'best-slim-massage-giam-beo.gif', '2014-07-31 00:00:00');
 
 -- --------------------------------------------------------
 
