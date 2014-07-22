@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2014 at 10:34 AM
+-- Generation Time: Jul 22, 2014 at 11:51 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -113,10 +113,13 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 ('03ffd3fe29f90697e3c231c6e5377be2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011087, ''),
 ('08235922e86581e6f1da3a3647002ea3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011960, ''),
+('089ca9bfb76fd17c98f4289bb2aea572', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022010, ''),
 ('08a9dc8acaae08e0a63b9af912689b91', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014461, ''),
 ('09691c8c1e05493ba70ba0da6409b4e9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017695, ''),
 ('09701d93189389ea3f92b9e7ba7e08c8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017397, ''),
+('0d10c739a91dea9ca60b6c0be2f441d1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022322, ''),
 ('20eb9c4aa5419f75557746851e1a9c22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014022, ''),
+('21c0aa0d5791e590e5a33cf171578298', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022239, ''),
 ('2320171569ee3d831a71bdedd13d83e6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011529, ''),
 ('264fe2671f3dc8d3b8b3ea445f10b660', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017679, ''),
 ('29eb659927df349cbca4097651d409b2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406010973, ''),
@@ -124,19 +127,27 @@ INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 ('31ba8ad743e7684a57a6ad9667fa697f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014432, ''),
 ('332d8c72865da6d32e7dc81f6fc953cb', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012057, ''),
 ('3539b3f590a8c718feabdf29dc85ed02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011124, ''),
+('38c383509ce8d56a0830afedfbe34d7a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022028, ''),
 ('3fe1a863fdb1e75934574ecfd2e96b42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017207, ''),
 ('48e3690c678257e999a5d244bf79dcc2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013928, ''),
 ('4958a2adf295dadf0d03c6b9b717d7e7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011032, ''),
+('497d45eff834d2d71f381cb39c12a016', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022275, ''),
 ('4a1f214b8c2a608d5c34a54a14f8d02e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013616, ''),
 ('50dcaa5502499c284598b5e483d92432', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017211, ''),
+('539f15d68fca6599f10b613004b49d6a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022010, ''),
 ('5862e4f56833dd41846597ae524bac24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017673, ''),
+('5e98c21e5e71b9b0fb8045a4082ff409', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022274, ''),
 ('628f4759822e0d4284dab4414c155c67', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013503, ''),
 ('6437a00275f073e8ecf3c6a4269440ae', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013493, ''),
 ('67c8938b19e76310a143d901d80c5aca', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406014102, ''),
+('6bee32ed309366fbfd29afce3ff9e39e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022327, ''),
 ('6c55c3af0111f34c16cb49979aba5ef9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011533, ''),
 ('6d09c88683397b4f40cb86867c2e4f8f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013946, ''),
 ('733b86fca9118ae7515cfb60212c79d6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012052, ''),
 ('755b3b934738c38d2814ca1300b9f4cc', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013860, ''),
+('79c20007d6f61fb5f1dce13c31705558', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022320, ''),
+('7a7552a75a5f6f2d394d4b5440e96fe1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022015, ''),
+('7babee94d68942ec4df424f7e7f53f0b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022132, ''),
 ('7f2631c332645280a95db27b62ad4ca2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013657, ''),
 ('7f642de5bd1cffd9de601a2cfe4bb01e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011969, ''),
 ('81304c2ed58d904c48aaaea3dc90ab66', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011030, ''),
@@ -163,6 +174,7 @@ INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 ('c0c0e9759fb210142affb2e05539b327', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017021, ''),
 ('c144e85ff6edec03e503e2f6f6b225f5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406011740, ''),
 ('c3408ec070afe299d2f91442ca970c7c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406017019, ''),
+('c683293ce6dc91ee4c2f2844c8ab730d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406022018, ''),
 ('c8fc8fd35d559e1d01bf2f2f1f486647', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406013663, ''),
 ('cbe54e5faa6a5bd36eb4f57157934813', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406012144, ''),
 ('d080431a124b4a090bffaaa6c07d8398', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406010974, ''),
@@ -402,6 +414,7 @@ INSERT INTO `payment` (`id`, `name`, `name_account`, `account_number`, `image`) 
 CREATE TABLE IF NOT EXISTS `product` (
   `id_product` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `manu` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
@@ -420,24 +433,24 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id_product`, `code`, `type`, `title`, `content`, `id_cate`, `price`, `point`, `count_rate`, `image`, `stock`, `view`, `create_date`) VALUES
-(1, '', '', 'Kem đánh răng người lớn', 'sss', 1, '160000', 0, 0, '068e80da9e71482db5912478760108dc.JPG', 10, 112, 0),
-(2, '', '', 'Ủ tóc 300ml Ganier Fructis Oil repair 3', 'Giá khuyến mại	200,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Ganier Fructis\r\nMàu sắc	Mẫu mới màu vàng\r\nNơi sản xuất	Đức', 1, '200000', 0, 0, 'd61c6da7e8984bdaaaa8c0df6c72bc8a.jpg', 10, 114, 0),
-(3, '', '', 'Kem dưỡng da Nivea 300ml', 'Giá khuyến mại	180,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	còn hàng\r\nNhãn hiệu	Nivea\r\nNơi sản xuất	Đức', 1, '180000', 0, 0, '862fdab67e1e4cc5aa3855b57ccc546f.png', 10, 111, 0),
-(4, '', '', 'Bộ dầu gội đầu và kem xả Ganier Fructis', 'Giá bán	300,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Ganier Fructis\r\nNơi sản xuất	Đức', 1, '300000', 6, 2, '06dfaa02730146e8805ba02703e84388.JPG', 10, 138, 0),
-(5, '', '', 'Kem dưỡng thể Lacoste', 'Giá bán	120,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Lacoste\r\nNơi sản xuất	Đức', 1, '120000', 0, 0, 'd5299d6cf30e4b2cb24aa3e42b3b01c7.JPG', 10, 111, 0),
-(6, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(7, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(8, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(9, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(10, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(11, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(12, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(13, '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
-(14, '', '', 'sss', '<p>ssssssssss</p>\n', 2, '111111', 0, 0, '58d2eca970d596818ad4855c85c1755e.jpg', 100, 0, 1401946622),
-(15, '', '', 'ssss', '', 0, '0', 0, 0, '0', 100, 0, 1402125763),
-(17, '', '', 's1 222', '<p>ssssss</p>\n', 1, '222222', 0, 0, '0498db6b5567c5d413a244d327eaa8b9.jpg', 100, 0, 1402627782),
-(18, '', '', 'sssss', '<p>ssssssss</p>\n', 0, '0', 0, 0, '0', 100, 0, 1404785963);
+INSERT INTO `product` (`id_product`, `code`, `manu`, `type`, `title`, `content`, `id_cate`, `price`, `point`, `count_rate`, `image`, `stock`, `view`, `create_date`) VALUES
+(1, '', '', '', 'Kem đánh răng người lớn', 'sss', 1, '160000', 0, 0, '068e80da9e71482db5912478760108dc.JPG', 10, 112, 0),
+(2, '', '', '', 'Ủ tóc 300ml Ganier Fructis Oil repair 3', '<p>Gi&aacute; khuyến mại 200,000 VND Gi&aacute; cũ 220,000 VND Trạng th&aacute;i C&ograve;n h&agrave;ng Nh&atilde;n hiệu Ganier Fructis M&agrave;u sắc Mẫu mới m&agrave;u v&agrave;ng Nơi sản xuất Đức</p>\n', 1, '200000', 0, 0, '03ee45dc18ea68a44b813dc42a5d8b20.JPG', 10, 126, 0),
+(3, '', '', '', 'Kem dưỡng da Nivea 300ml', 'Giá khuyến mại	180,000 VND\r\nGiá cũ	220,000 VND\r\nTrạng thái	còn hàng\r\nNhãn hiệu	Nivea\r\nNơi sản xuất	Đức', 1, '180000', 0, 0, '862fdab67e1e4cc5aa3855b57ccc546f.png', 10, 111, 0),
+(4, '', '', '', 'Bộ dầu gội đầu và kem xả Ganier Fructis', 'Giá bán	300,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Ganier Fructis\r\nNơi sản xuất	Đức', 1, '300000', 6, 2, '06dfaa02730146e8805ba02703e84388.JPG', 10, 138, 0),
+(5, '', '', '', 'Kem dưỡng thể Lacoste', 'Giá bán	120,000 VND\r\nTrạng thái	Còn hàng\r\nNhãn hiệu	Lacoste\r\nNơi sản xuất	Đức', 1, '120000', 0, 0, 'd5299d6cf30e4b2cb24aa3e42b3b01c7.JPG', 10, 111, 0),
+(6, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(7, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(8, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(9, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(10, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(11, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(12, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(13, '', '', '', 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 0, 0, 'effd3139933d4bf287c27846d725e616.JPG', 11, 0, 0),
+(14, '', '', '', 'sss', '<p>ssssssssss</p>\n', 2, '111111', 0, 0, '58d2eca970d596818ad4855c85c1755e.jpg', 100, 0, 1401946622),
+(15, '', '', '', 'ssss', '', 0, '0', 0, 0, '0', 100, 0, 1402125763),
+(17, '', '', '', 's1 222', '<p>ssssss</p>\n', 1, '222222', 0, 0, '0498db6b5567c5d413a244d327eaa8b9.jpg', 100, 0, 1402627782),
+(18, '', '', '', 'sssss', '<p>ssssssss</p>\n', 0, '0', 0, 0, '0', 100, 0, 1404785963);
 
 -- --------------------------------------------------------
 
