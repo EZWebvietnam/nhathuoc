@@ -16,7 +16,7 @@ class Product extends MY_Controller
 		$this->load->model('catehomemodel');
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
 		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();
-		//parent::about();
+		parent::about();
 	}
 	public function product_detail($id = null)
 	{

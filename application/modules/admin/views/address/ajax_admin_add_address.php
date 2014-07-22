@@ -29,12 +29,9 @@
                 </td>
             </tr>
 			<tr>
-                <td class="label">Khu vực</td>
+                <td class="label">Email</td>
                 <td colspan="3">
-                    <select name="khu_vuc" id="type">
-						<option value="2">Miền Bắc</option>
-						<option value="1">Miền Nam</option>
-					</select>
+                    <input style="width: 407px;" id="email" type="text" value="" name ="email"/>
                 </td>
             </tr>
             <tr>

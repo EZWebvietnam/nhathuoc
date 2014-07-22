@@ -28,6 +28,12 @@
                     <input style="width: 407px;" id="phone" type="text" value="<?php echo $address_detail[0]['phone'] ?>" name ="phone"/>
                 </td>
             </tr>
+			<tr>
+                <td class="label">Email</td>
+                <td colspan="3">
+                    <input style="width: 407px;" id="email" type="text" value="<?php echo $address_detail[0]['email'] ?>" name ="email"/>
+                </td>
+            </tr>
             <tr>
                 <td class="label"></td>
                 <td colspan="3">

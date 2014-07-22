@@ -31,7 +31,8 @@ class Addressadmin extends MY_Controller
 		{
 			$address = $this->input->post('address');
 			$phone = $this->input->post('phone');
-			$data_save = array('address'=>$address,'phone'=>$phone);
+			$email = $this->input->post('email');
+			$data_save = array('address'=>$address,'phone'=>$phone,'email'=>$email);
 			$this->faqmodel->edit_address($id,$data_save);
 			echo json_encode(array('error'=>'0','msg'=>'Update thành công'));
 		}
@@ -47,8 +48,8 @@ class Addressadmin extends MY_Controller
 		{
 			$address = $this->input->post('address');
 			$phone = $this->input->post('phone');
-			$khu_vuc = $this->input->post('khu_vuc');
-			$data_save = array('address'=>$address,'phone'=>$phone,'type'=>$khu_vuc);
+			$email = $this->input->post('email');
+			$data_save = array('address'=>$address,'phone'=>$phone,'email'=>$email);
 			$id = $this->faqmodel->insert_address($data_save);
 			if($id>0)
 			{

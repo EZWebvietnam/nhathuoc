@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2014 at 06:31 AM
+-- Generation Time: Jul 22, 2014 at 06:45 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `about` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
@@ -38,10 +39,8 @@ CREATE TABLE IF NOT EXISTS `about` (
 -- Dumping data for table `about`
 --
 
-INSERT INTO `about` (`id`, `address`, `phone`, `type`) VALUES
-(1, 'Số 40, Đường 13, Quốc lộ 13, P.Hiệp Bình Chánh, Q.Thủ Đức, TPHCM\n- Hotline: 01679 478 959\nEmail: tibimarthcm@gmail.com\n **Cơ sở 2: -Số 7/134 Liên Khu 5-6, P.Bình Hưng Hòa B, Q.Bình Tân, TP.HCM\n- Hotline: 0906 888 545\nEmail: antawavn@gmail.com', '0906.888.545 hoặc 01679.478.959', 1),
-(2, 'Số 666 Đường Xóm Chùa, Phố Dâu, Cổ Thành - TX Chí Linh - Hải Dương\nHotline: 01644 304 255\nEmail: dinhthi92715@gmail.com', '01675.317.435 hoặc 01644.304.255', 2),
-(3, 'sss', 'ssss', 2);
+INSERT INTO `about` (`id`, `address`, `phone`, `email`, `type`) VALUES
+(1, 'Số 40, Đường 13, Quốc lộ 13, P.Hiệp Bình Chánh, Q.Thủ Đức, TPHCM\n', '0906.888.545 hoặc 01679.478.959', 'chaienbungbu91@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -112,19 +111,38 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
+('011962a1f4ffdf596bed38af3b881020', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004115, ''),
+('01d248cb4fa4b0e7f1e6ff80c1fb0c88', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003835, ''),
+('057f215b4c86fc28cd346973cebc1a28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003833, ''),
+('1161fe3023e32c6228525d852483f9d1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004117, ''),
 ('1bd6551b42f6fd68cad8374a100b970c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003359, ''),
 ('1de2bba7ea0a8c5406443914186ccda1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003406, ''),
+('1ff55326a656d8e0a0d9aee96ae97c72', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003992, ''),
 ('22415f82c050fd1bd936088acfe123f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003364, ''),
+('22aaae58e842efadcb2ef98a3b88f7cd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003841, ''),
+('3042faf98e25e1988ed606ceb86cc8d7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003847, ''),
 ('4ec2b789519e91104d83cba36057a527', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003330, ''),
 ('5a6c39e0b25b3451b1acf48070f5ce92', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003358, ''),
 ('62519ddead2b1c0bb047eab55a9a99bc', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003400, ''),
+('63a51d97cd96801e9e6413e6449b5d3b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004105, ''),
 ('66607039e21055f08dca33dc4366e3f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003407, ''),
 ('6a2faee43fcc9da93d51dea09c05cd4d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003349, ''),
+('6e6c053ba904af168e87bd41105485d6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004124, ''),
 ('71c36eb71f568eb7fd205fef3808769a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003367, ''),
+('7d4e73f7ca7cc2f5d0319a593c9303ef', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003640, ''),
 ('a392cabb33a1287cb53578b9b7b080a8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003351, ''),
+('a47e00b970a970a9cc82ac941087c31c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004107, ''),
+('c008cbf22d8ef017000b76d328ef1ca5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003839, ''),
 ('d2c9b866f1e29b49d50249765a780f6b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003355, ''),
+('d4a4b5b99d0de85fd198b38d8c117e80', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003995, ''),
+('d7aada09ddfaaf3ef5b4ae3f6e2c04b4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003642, ''),
+('d97832f4dc25df80f204192498130144', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003996, ''),
+('de4cd952de7aea56403be6f838655c67', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004115, ''),
 ('df45d295a430fb9b74aaac2226f3144c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003343, ''),
-('f5920ad7c802443778ed28335a88af64', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003339, '');
+('e52cbdc7f708609f1560de84db8f36d4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406004124, ''),
+('f5920ad7c802443778ed28335a88af64', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003339, ''),
+('f72bd5293082e8298f29d5dfa2e5280a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003839, ''),
+('f94d1ee75c3f45e2b69b7ffc88841c3e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1406003847, '');
 
 -- --------------------------------------------------------
 
@@ -394,8 +412,8 @@ CREATE TABLE IF NOT EXISTS `support` (
 --
 
 INSERT INTO `support` (`id`, `name`, `nick`, `phone`) VALUES
-(1, 'Mr Vũ', 'antawavn', '0906.888.545'),
-(4, 'Miss Kim Bình', 'nguyenkimbinh91', '01679.478.959');
+(1, 'Tư vấn sản phẩm', 'antawavn', '0906.888.545'),
+(4, 'Hỗ trợ thành viên', 'nguyenkimbinh91', '01679.478.959');
 
 -- --------------------------------------------------------
 

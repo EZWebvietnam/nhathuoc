@@ -84,9 +84,15 @@
 							<a class="tranport_free" href="/thong-bao/cuoc-van-chuyen.html">Cước vận chuyển</a>
 							<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" alt="spacer" width="5" height="5"/></div>
 							<div class="head_support">
-								<a href="ymsgr:sendIM?tvgc02"><span>Tư vấn sản phẩm</span></a>
+							<?php 
+							foreach($list_yahoo as $yahoo)
+							{
+							
+							?>
+								<a href="ymsgr:sendIM?<?php echo $yahoo['nick'];?>"><span><?php echo $yahoo['name'];?></span></a>
 								&nbsp;
-								<a href="ymsgr:sendIM?tvgc04"><span>Hỗ trợ thành viên</span></a>
+							<?php } ?>
+								
 							</div>
 						</div>
 						<!--end #cart_tool-->	
@@ -497,10 +503,10 @@
 							<div class="info">
 								<div>
 									
-									<p style="text-align: justify;"><strong>Địa chỉ:</strong> Ph&ograve;ng 603, nh&agrave; 24T2 Ho&agrave;ng Đạo Th&uacute;y, H&agrave; Nội<span style="font-family: Arial;"> </span>&nbsp;</p>
+									<p style="text-align: justify;"><strong>Địa chỉ:</strong> <?php echo $about[0]['address'];?></p>
 									<p><span style="font-size: small;"><span style="font-family: Arial;"> </span></span></p>
-									<p style="text-align: justify;"><strong>Điện thoại</strong>: 1800.8155 | Mobile: 0943.48.49.50<span style="font-size: small;"><span style="font-family: Arial;"> </span></span>&nbsp;</p>
-									<p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Arial;"><strong>Email:</strong> admin@nhathuoc365.vn</span></span></p>
+									<p style="text-align: justify;"><strong>Điện thoại</strong>: <?php echo $about[0]['phone'];?></p>
+									<p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Arial;"><strong>Email:</strong> <?php echo $about[0]['email'];?></span></span></p>
 									<p style="text-align: justify;"><em><strong><span style="font-size: small;"><span style="font-family: Arial;">Mọi th&ocirc;ng tin tr&ecirc;n website chỉ mang t&iacute;nh chất tham khảo.</span></span></strong></em></p>
 									<p style="text-align: justify;"><em><strong><span style="font-size: small;"><span style="font-family: Arial;">Việc sử dụng TPCN n&ecirc;n theo hướng dẫn của b&aacute;c sĩ, dược sĩ hoặc người c&oacute; chuy&ecirc;n m&ocirc;n.</span></span></strong></em></p>
 									<p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Arial;">&nbsp;</span></span></p>

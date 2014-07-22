@@ -85,7 +85,7 @@ class MY_Controller extends CI_Controller
 	public function about()
 	{
 		$this->load->model('faqhomemodel');
-		$this->data['about'] = $this->faqhomemodel->about();	
+		$this->data['about'] = $this->faqhomemodel->about(1);	
 	}
 	public function rand_image()
 	{

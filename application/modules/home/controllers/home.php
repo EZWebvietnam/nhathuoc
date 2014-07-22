@@ -11,7 +11,7 @@ class Home extends MY_Controller {
 		parent::load_yahoo();
 		parent::load_cart();
 		parent::count_cart();
-		//parent::about();
+		parent::about();
 		parent::rand_image();
     }
 
