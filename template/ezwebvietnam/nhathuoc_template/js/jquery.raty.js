@@ -409,7 +409,7 @@
 		hintList:		['NA', 'Kém', 'Bình thường', 'Tốt', 'Xuất sắc'],
 		noRatedMsg:		'not rated yet',
 		number:			5,
-		path:			'./images/',
+		path:			base_url+'template/ezwebvietnam/nhathuoc_template/images/',
 		iconRange:		[],
 		readOnly:		false,
 		scoreName:		'score',

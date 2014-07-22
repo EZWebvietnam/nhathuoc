@@ -9,6 +9,7 @@ class Home extends MY_Controller {
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
+		parent::load_cart();
 		//parent::about();
 		parent::rand_image();
     }
@@ -16,9 +17,24 @@ class Home extends MY_Controller {
     public function index() {
 		$this->load->model('catehomemodel');
 		$this->load->model('producthomemodel');
-		$this->load->model('faqhomemodel');
-		$this->data['list_product_random'] = $this->producthomemodel->list_random_product();
+		$this->data['list_product_sale'] = $this->producthomemodel->list_random_sale();
+		$this->data['list_product_new'] = $this->producthomemodel->product_new();
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
+		$this->data['list_ban_chay_1'] = $this->producthomemodel->product_bc_1();
+		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();
+		if(!empty($this->data['list_ban_chay_1']))
+		{
+			$array = array();
+			foreach($this->data['list_ban_chay_1'] as $id)
+			{
+				$array[$id['id_product']] = $id['id_product'];
+			}
+			$this->data['list_ban_chay_2'] = $this->producthomemodel->product_bc_2($array);	
+		}
+		else 
+		{
+			$this->data['list_ban_chay_2'] = array();
+		}
 		$this->load->view('home/layout_home_index',$this->data);
     }
 

@@ -7,7 +7,7 @@
 	//var wd_witdh = $(document).width(); // returns width of HTML document		  
 	//wd_witdh = $(window).width();   // returns width of browser viewport
 		
-var tb_pathToImage = "../../images/loader.gif";
+var tb_pathToImage = base_url+"template/ezwebvietnam/nhathuoc_template/images/loader.gif";
 
 
 function getViewport(){

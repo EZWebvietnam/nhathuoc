@@ -10,6 +10,8 @@ class Faq extends MY_Controller
 		parent::load_header();
 		parent::load_yahoo();
 		//parent::about();
+		$this->load->model('producthomemodel');
+		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();
 		$this->load->model('faqhomemodel');
 	}
 	public function list_faq()
@@ -97,6 +99,7 @@ class Faq extends MY_Controller
         $this->data['total'] = $config['total_rows'];
         $this->data['list'] = $array_sv;
 		$this->data['cate_detail_'][0]['title']='Khuyến mại';
+		$this->data['main_content'] = 'list_sale_view';
 		$this->load->view('home/layout_sale',$this->data);
 	}
 	public function list_congdung()

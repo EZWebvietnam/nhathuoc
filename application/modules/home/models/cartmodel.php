@@ -36,22 +36,30 @@ class Cartmodel extends CI_Model
         $query = $this->db->query($sql,array($ip));
         return $query->result_array();
     }
+	public function list_cart_ip_3($ip)
+    {
+        $sql ='SELECT * FROM cart INNER JOIN product ON product.id_product = cart.id_product WHERE cart.ip = ? ORDER BY cart.id DESC LIMIT 2';
+        $query = $this->db->query($sql,array($ip));
+        return $query->result_array();
+    }
 	public function list_cart_ip_2($ip)
     {
         $sql ='SELECT * FROM cart WHERE cart.ip = ?';
         $query = $this->db->query($sql,array($ip));
         return $query->result_array();
     }
-    public function update_cart($id_cart,array $data)
+    public function update_cart($ip,$id_cart,array $data)
     {
         $id_cart = intval($id_cart);
-        $this->db->where('id',$id_cart);
+        $this->db->where('id_product',$id_cart);
+         $this->db->where('ip',$ip);
         $this->db->update('cart',$data);
     }
-    public function delete_cart($id_cart)
+    public function delete_cart($id_cart,$id_product)
     {
+    	$id_product = intval($id_product);
         $id_cart = intval($id_cart);
-        $this->db->delete('cart',array('id'=>$id_cart));
+        $this->db->delete('cart',array('ip'=>$id_cart,'id_product'=>$id_product));
     }
 	public function delete_cart_ip($id_cart)
     {

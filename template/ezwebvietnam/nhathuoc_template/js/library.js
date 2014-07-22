@@ -75,7 +75,7 @@ function validateContact(){
 	//alert(regData);
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href', '/vn/'); }},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -115,7 +115,7 @@ function add2cart(obj){
 	}
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: {action:'add2cart',pID:pID,pQty:pQty},
 			success : function(data){
@@ -144,7 +144,7 @@ function add_cart(obj){
 	}
 	$.ajax({
 		type : 'POST',
-		url : '/ajax.html',
+		url : base_url+'ajax.html',
 		dataType : 'json',
 		data: {action:'add2cart',pID:pID,pQty:pQty},
 		success : function(data){
@@ -170,7 +170,7 @@ function add_cart1(obj){
 	}
 	$.ajax({
 		type : 'POST',
-		url : '/ajax.html',
+		url : base_url+'ajax.html',
 		dataType : 'json',
 		data: {action:'add2cart',pID:pID,pQty:pQty},
 		success : function(data){
@@ -190,7 +190,7 @@ function addCommnet(obj)
 	var url = $(obj).attr('rel');
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: {action:'checkComment'},
 			success : function(data)
@@ -207,7 +207,7 @@ function add2favorist(obj){
 	var pID = $(obj).attr('rel');
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: {action:'add2favorites',pID:pID},
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){/*$(window.location).attr('href', '/vn/');*/}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -264,9 +264,9 @@ function getTip(eID){
 	var strHTML ='';
 		strHTML+='<div class="box_white">';
 		strHTML+='	<div class="w_top">';
-		strHTML+='		<div class="wt_left"><img src="/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
-		strHTML+='		<div class="wt_center"><img src="/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
-		strHTML+='		<div class="wt_right"><img src="/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>	';
+		strHTML+='		<div class="wt_left"><img src="'+base_url+'template/ezwebvietnam/nhathuoc_template/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
+		strHTML+='		<div class="wt_center"><img src="'+base_url+'template/ezwebvietnam/nhathuoc_template/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
+		strHTML+='		<div class="wt_right"><img src="'+base_url+'template/ezwebvietnam/nhathuoc_template/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>	';
 		strHTML+='	</div>';
 		strHTML+='	<div class="clear"></div>';
 		strHTML+='	<div class="w_main">';
@@ -274,9 +274,9 @@ function getTip(eID){
 		strHTML+='	</div>';
 		strHTML+='	<div class="clear"></div>';
 		strHTML+='	<div class="w_bottom">';
-		strHTML+='		<div class="wb_left"><img src="/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
-		strHTML+='		<div class="wb_center"><img src="/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
-		strHTML+='		<div class="wb_right"><img src="/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
+		strHTML+='		<div class="wb_left"><img src="'+base_url+'template/ezwebvietnam/nhathuoc_template/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
+		strHTML+='		<div class="wb_center"><img src="'+base_url+'template/ezwebvietnam/nhathuoc_template/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
+		strHTML+='		<div class="wb_right"><img src="'+base_url+'template/ezwebvietnam/nhathuoc_template/images/spacer.gif" border="0" height="1" width="1" alt="" /></div>';
 		strHTML+='	</div>';
 		strHTML+='</div>';
 	return strHTML;
@@ -325,7 +325,7 @@ function registerValidate(){
 	var regData = $('form#frmRegister').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data:regData,
 			success : function(data){Boxy.alert(data.message,function(){if (data.error==false) {$(window.location).attr('href', data.url);$('#register_wait').hide(20);}},{title:'Thông báo',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -338,7 +338,7 @@ function changeCity(obj){
 	var cID = $(obj).val();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data:{action:'district',cID:cID},
 			success : function(data){if(data.error==false){$('#frm_district').html(data.html)}},
@@ -359,7 +359,7 @@ function loginValidate(){
 	var regData = $('form#frmLogin').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){
@@ -405,7 +405,7 @@ function changepassValidate(){
 	var regData = $('form#frmChangepass').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}else{$('#changpass_waiting').hide(20);}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -417,7 +417,7 @@ function logout(){
 	Boxy.confirm('Bạn có thực sự muốn xóa thoát ?.',function(){
 		$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: {action:'logout'},
 			success : function(data){if(data.error==false){$(window.location).attr('href', data.url);}},
@@ -430,7 +430,7 @@ function uChangeCity(obj,dID,rID){
 	if(rID=='' || rID ==undefined) rID = '#use_district';
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data:{action:'uDistrict',cID:cID,dID:dID},
 			success : function(data){if(data.error==false){$(rID).html(data.html)}},
@@ -461,7 +461,7 @@ function changeInfo(){
 	var regData = $('form#frmChangInfo').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}else{$('#changInfo_waiting').hide(20);}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -499,7 +499,7 @@ function delFavorits(obj){
 	}
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: {action:'delFavorits',pID:pID},
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}else{$(obj).removeClass();}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -516,7 +516,7 @@ function uAdd2Cart(){
 	var regData = 'action=uAdd2Cart&'+Item.serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.code==0) {$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); $('#popCart').html(data.short); $('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); }},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -530,7 +530,7 @@ function delItemInCart(obj){
 	var regData = 'action=delItemInCart&pID='+pID;
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -546,7 +546,7 @@ function updateItemInCart(obj){
 	var regData = 'action=updateCart&pID='+pID+'&pQuality='+pQuality+'&urlBack='+urlBack;
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -559,7 +559,7 @@ function updateAllItemInCart(){
 	var pID  = $('.pro_quantity input[type="button"]');
 	var urlBack  = $('#cart_update_back').val();
 		if(urlBack==undefined) urlBack ='';
-	var regData = 'action=updateAllCart+&urlBack='+urlBack;
+	var regData = 'action=updateAll+&urlBack='+urlBack;
 	$.each(pQuality, function(index, value) {
 		regData+='&pQuality[]='+$(value).val();	
 	} )
@@ -568,7 +568,7 @@ function updateAllItemInCart(){
 	} )
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){$(window.location).attr('href',data.url);},
@@ -607,7 +607,7 @@ function userBookValidate(){
 	var regData = $('form#formUserBookPayment').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){
@@ -663,7 +663,7 @@ function userReciveValidate(){
 	var regData = $('form#formUserRecivePayment').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){
@@ -734,7 +734,7 @@ function validateBR(){
 	var regData = $('form#formUserBookPayment').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){
@@ -759,7 +759,7 @@ function promotionCodeValidate(){
 	}	
 $.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data:{action:'addPromotionCode',promotionCode:$('#promotionCode').val()},
 			success : function(data){
@@ -780,7 +780,7 @@ function promotionCodeCartValidate(){
 	}	
 $.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data:{action:'addPromotionCode',promotionCode:$('#promotionCodeCart').val()},
 			success : function(data){
@@ -801,7 +801,7 @@ $.ajax({
 function optChange(obj){
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data:{action:'optionChange',optValue:$(obj).val()},
 			success : function(data){
@@ -825,7 +825,7 @@ function oStatus(){
 	var regData = $('form#frmOrderStatus').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){$('#changpass_waiting').hide(20);$('#oID').val('')},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -845,7 +845,7 @@ function forgetValidate(){
 	var regData = $('form#frmForget').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){document.frmForget.reset();}$('#forget_wait').hide(20);},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -872,7 +872,7 @@ function cPValidate(){
 	var regData = $('form#frmChangepass').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href',data.url);}else{$('#changepass_wait').hide(20);}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -886,7 +886,7 @@ function showInfoCart(obj){
 	$("#show-content-1").css({'display':'block','position':'absolute'});
 	$.ajax({
 		type : 'POST',
-		url : '/ajax.html',
+		url : base_url+'ajax.html',
 		dataType : 'json',
 		data: {action:'shortCart'},
 		success : function(data){$('#popCart').html(data.html);$('#popCart').removeClass('loading');},
@@ -938,7 +938,7 @@ function regNewsletter()
 	if(document.getElementById("new_tips").checked) new_tips = 1;	
 	$.ajax({
 		type : 'POST',
-		url : '/ajax.html',
+		url : base_url+'ajax.html',
 		dataType : 'json',
 		data: {action:'reg_newsletter',txtMail:$('#txtMail').val(),new_promotion:new_promotion,new_research:new_research,new_tips:new_tips,url:$('#url_newsletter').val()},
 		success : function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href','/vn/');}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -960,7 +960,7 @@ function validateNewsletter(obj){
 	regData = $(obj).serialize();
 	$.ajax({
 		type: 'POST',
-		url: '/ajax.html',
+		url: base_url+'ajax.html',
 		dataType: 'json',
 		data:regData,
 		success: function(data){Boxy.alert(data.message,function(){if(data.error==false){$(window.location).attr('href','/vn/');}},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });},
@@ -978,7 +978,7 @@ function checkPolls()
 	var regData = $('form#frmPolls').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data)
@@ -1010,7 +1010,7 @@ function rateValidate()
 	var regData = $('form#frmSendRate').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){
@@ -1145,7 +1145,7 @@ function product_fast_payment(obj,quality,phone){
 	var regData = 'action=product_fast_payment&pID='+pID+'&quality='+pQty+'&phone='+phone;
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){
@@ -1172,7 +1172,7 @@ function order_fast_payment(obj,phone){
 	var regData = 'action=order_fast_payment&phone='+phone;
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){
@@ -1218,7 +1218,7 @@ function paymentValidate(obj){
 	var regData = $('form#formUserBookPayment').serialize();
 	$.ajax({
 			type : 'POST',
-			url : '/ajax.html',
+			url : base_url+'ajax.html',
 			dataType : 'json',
 			data: regData,
 			success : function(data){

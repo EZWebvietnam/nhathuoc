@@ -203,11 +203,11 @@ if (defined('ENVIRONMENT'))
  if($_SERVER['SERVER_NAME'] == 'localhost')
  {
       define('HOST','localhost'); 
-     define('DB_NAME','tibimart');
+     define('DB_NAME','nhathuoc');
      define('DB_USER','root');
      define('DB_PASS','');
-     define('ROT_DIR','/tibimart/');
-     define('BASE_URL','http://localhost/tibimart/');
+     define('ROT_DIR','/nhathuoc/');
+     define('BASE_URL','http://localhost/nhathuoc/');
      define('MAIL_ADMIN','giangbeoit@gmail.com');
      define('PATH_FOLDER',$_SERVER['DOCUMENT_ROOT']);
  }

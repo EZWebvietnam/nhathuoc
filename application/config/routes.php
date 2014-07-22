@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "home/index";
 $route['trang-chu'] = "home/home/index";
+$route['ajax.html'] = 'home/product/ajax_html';
+$route['comment-product?(:any)'] = 'home/product/comment/$1';
 $route['huong-dan-thanh-toan'] = "home/home/payment";
 $route['cong-dung'] = "home/faq/list_congdung";
 $route['cong-dung/page/(:any)'] = "home/faq/list_congdung";

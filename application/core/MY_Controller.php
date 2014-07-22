@@ -85,5 +85,21 @@ class MY_Controller extends CI_Controller
 		$this->load->model('faqhomemodel');
 		$this->data['rand_image'] = $this->faqhomemodel->rand_image();	
 	}
+	public function load_cart()
+	{
+		$this->load->model('cartmodel');
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		}
+		elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
+		else
+		{
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+		$list_cart = $this->cartmodel->list_cart_ip($ip);
+		$this->data['list_cart'] = $list_cart;
+	}
 }
 ?>

@@ -7,12 +7,29 @@ class Producthomemodel extends CI_Model
 		parent::__construct();
 		$this->load->database();
 	}
-	public function list_random_product()
+	public function list_random_sale()
 	{
-		$this->db->select();
-		$this->db->order_by('rand()');
-		$this->db->limit('12');
-		$query = $this->db->get("{$this->_name}");
+		$sql ="SELECT *,{$this->_name}.title as title_product,cate_product.title as title_cate FROM {$this->_name} INNER JOIN cate_product ON {$this->_name}.id_cate = cate_product.id_cate INNER JOIN sale_off ON {$this->_name}.id_product = sale_off.id_product WHERE sale_off.exp_date >=now()ORDER BY rand() LIMIT 4;";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+	public function product_new()
+	{
+		$sql ="SELECT *,{$this->_name}.title as title_product,cate_product.title as title_cate FROM {$this->_name} INNER JOIN cate_product ON {$this->_name}.id_cate = cate_product.id_cate ORDER BY product.id_product DESC LIMIT 3;";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+	public function product_bc_1()
+	{
+		$sql ="SELECT *,{$this->_name}.title as title_product,cate_product.title as title_cate FROM {$this->_name} INNER JOIN cate_product ON {$this->_name}.id_cate = cate_product.id_cate WHERE product.view > 100 ORDER BY product.id_product DESC LIMIT 3;";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+	public function product_bc_2($string)
+	{
+		$string = implode(',',$string);
+		$sql ="SELECT *,{$this->_name}.title as title_product,cate_product.title as title_cate FROM {$this->_name} INNER JOIN cate_product ON {$this->_name}.id_cate = cate_product.id_cate WHERE product.view > 100 AND product.id_product NOT IN($string) ORDER BY product.id_product DESC LIMIT 3;";
+		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
 	public function list_product_by_cate_home($id_cate)
@@ -31,7 +48,7 @@ class Producthomemodel extends CI_Model
 		$this->db->select();
 		$this->db->where('id_cate',$id_cate);
 		$this->db->order_by('rand()');
-		$this->db->limit('4');
+		$this->db->limit('5');
 		$query = $this->db->get("{$this->_name}");
 		return $query->result_array();
 	}
@@ -80,6 +97,12 @@ class Producthomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+	public function get_sale_rand()
+    {
+        $sql ="SELECT * FROM sale_off WHERE exp_date >= now() ORDER BY rand() LIMIT 1;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 	public function get_sale_off_product_()
     {
         $sql="SELECT * FROM {$this->_name} ORDER BY rand() LIMIT 4";
@@ -124,6 +147,22 @@ class Producthomemodel extends CI_Model
 		$sql="SELECT * FROM {$this->_name} WHERE title LIKE'%$key%' OR content LIKE '%$key%'";
 		$query = $this->db->query($sql);
 		return count($query->result_array());
+	}
+	public function insert_comment(array $data)
+	{
+		$this->db->insert('comment_product',$data);
+		return $this->db->insert_id();	
+	}
+	public function update_product($id,array $data)
+	{
+		$this->db->where('id_product',$id);
+		$this->db->update("$this->_name",$data);	
+	}
+	public function list_comment($id_product)
+	{
+		$sql="SELECT * FROM comment_product WHERE id_product = $id_product";
+		$query = $this->db->query($sql);
+		return $query->result_array();
 	}
 }
 ?>

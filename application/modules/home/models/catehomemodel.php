@@ -27,7 +27,6 @@ class Catehomemodel extends CI_Model
 	public function list_cate_home()
 	{
 		$this->db->select();
-		$this->db->where('show_home',1);
 		$query = $this->db->get("$this->_name");
 		return $query->result_array();
 	}

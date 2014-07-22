@@ -25,13 +25,13 @@ function LoadPagging(pi, ps, url, total_page, urlext) {
     if (total_page != 1)
     {
         if (pi == 1) {
-            content += "<li class='disabled'> <a href='#'><<</a></li>";
+            content += "<div class='num_page' style='display:none;'> <a href='#'><<</a></li></div>";
         } else {
             if (pi == 2) {
-                content += '<li><a href="' + url + '"><<</a></li>';
+                content += '<div class="num_page"><a href="' + url + '"><<</a></div>';
             } else {
 
-                content += '<li><a href="' + url + sep + 'page/' + (pi - 1) + '"><<</a></li>';
+                content += '<div class="num_page"><a href="' + url + sep + 'page/' + (pi - 1) + '"><<</a></div>';
             }
         }
 
@@ -73,7 +73,7 @@ function LoadPagging(pi, ps, url, total_page, urlext) {
             var activeLi = '';
             var active = '';
             if (pi == i) {
-                content += '<li class="active"><a href="#">' + i + '</a></li>';
+                content += '<div class="select"><a href="'+url+'/page/' + i + '">' + i + '</a></div>';
             } else {
                 var rel = ' rel="next" ';
                 if (i < pi) {
@@ -81,19 +81,19 @@ function LoadPagging(pi, ps, url, total_page, urlext) {
                 }
                 if (i == 1) {
 
-                    content += '<li><a href="' + url + '" ' + active + ' ' + rel + '>' + i + '</a></li>';
+                    content += '<div class="num_page"><a href="' + url + '" ' + active + ' ' + rel + '>' + i + '</a></div>';
                 } else {
 
-                    content += '<li><a href="' + url + sep + 'page/' + i + '" ' + active + ' ' + rel + '>' + i + '</a></li>';
+                    content += '<div class="num_page"><a href="' + url + sep + 'page/' + i + '" ' + active + ' ' + rel + '>' + i + '</a></div>';
                 }
             }
         }
 
         // Next
         if (pi == total_page) {
-            content += "<li class='disabled'> <a href='#'>>></a></li>";
+            content += "<div class='num_page' style='display:none;'> <a href='#'>>></a></div>";
         } else {
-            content += '<li><a href="' + url + sep + 'page/' + (pi + 1) + '">>></a></li>';
+            content += '<div class="num_page"><a href="' + url + sep + 'page/' + (pi + 1) + '">>></a></div>';
         }
     }
     return content;
