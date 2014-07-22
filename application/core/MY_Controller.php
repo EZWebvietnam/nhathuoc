@@ -67,8 +67,12 @@ class MY_Controller extends CI_Controller
 			$gt = $employee->getElementsByTagName("gioithieu");
             $gioithieu = $gt->item(0)->nodeValue;
                 $title = $tit->item(0)->nodeValue;
+			$yh = $employee->getElementsByTagName("yahoo");
+                $yahoo = $yh->item(0)->nodeValue;
+				$pn = $employee->getElementsByTagName("phone");
+                $phone = $pn->item(0)->nodeValue;
                 $data_setting = array('author'=>$name,'publisher'=>$pubs,'copyright'=>$cop,'robots'=>$robots,
-                    'distribution'=>$distribution,'rating'=>$rating,'keywords'=>$keywords,'logo'=>$logos,'icon'=>$icons,'description'=>$description,'title'=>$title,'gioithieu'=>$gioithieu);
+                    'distribution'=>$distribution,'rating'=>$rating,'keywords'=>$keywords,'logo'=>$logos,'icon'=>$icons,'description'=>$description,'title'=>$title,'gioithieu'=>$gioithieu,'yahoo'=>$yahoo,'phone'=>$phone);
         }
         $this->data['header']=$data_setting;
     }

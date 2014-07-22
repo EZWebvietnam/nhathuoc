@@ -85,7 +85,8 @@
                         <tr>
                            <th class="checkbox"><input type="checkbox" name="sa" id="sa" onclick="check_chose('sa', 'ar_id[]', 'image_khoahoc')"></th>
                            <th class="id">Hình ảnh</th>
-						   
+						   <th>Tiêu đề</th>
+						   <th>Url</th>
                            <th class="publish">Chức năng</th>
                         </tr>
                      </thead>
@@ -96,8 +97,9 @@
                         ?>
                      <tr class="row1 ">
                         <td align="center"><input  type="checkbox" name="ar_id[]" value="<?php echo $product_ref['id']?>"></td>
-						
                         <td><img src="<?php echo base_url();?>file/uploads/slide/<?php echo $product_ref['image']?>" width="100" height="100"/></td>
+						<td><?php echo $product_ref['title'];?></td>
+						<td><?php echo $product_ref['url'];?></td>
                         <td align="center">
                             
                             

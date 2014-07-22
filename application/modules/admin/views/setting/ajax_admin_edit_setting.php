@@ -57,6 +57,18 @@
                     <input id="rating" type="text" value="<?php echo $setting['rating'] ?>" name ="rating"/>
                 </td>
             </tr>
+			<tr>
+                <td class="label">Yahoo</td>
+                <td colspan="3">
+                    <input id="yahoo" type="text" value="<?php echo $setting['yahoo'] ?>" name ="yahoo"/>
+                </td>
+            </tr>
+			<tr>
+                <td class="label">Phone</td>
+                <td colspan="3">
+                    <input id="phone" type="text" value="<?php echo $setting['phone'] ?>" name ="phone"/>
+                </td>
+            </tr>
             <tr>
                 <td class="label">Keysword</td>
                 <td colspan="3">

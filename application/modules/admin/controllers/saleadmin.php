@@ -82,6 +82,81 @@ class Saleadmin extends MY_Controller
             $this->load->view('sale/ajax_admin_add_sale',$this->data);
         }
     }
+	public function addimage1($id)
+	{
+		$detail_sale = $this->salemodel->detail($id);	
+		if($this->input->post())
+		{
+			$file = $this->input->post('file');
+			if($file!='')
+			{
+				
+				if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img_thumb']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img_thumb']) && $detail_sale[0]['img_thumb']!='')
+				{
+					unlink(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img_thumb']);
+				}
+				$data_save = array('img_thumb'=>$file);
+				$this->salemodel->update($id,$data_save);
+				$array = array('error' => 0, 'msg' => "Thành công");
+       			echo json_encode($array);
+			}
+		}	
+		else
+		{
+			$this->data['sale_detail'] = $detail_sale;
+			$this->load->view('sale/ajax_admin_add_image1',$this->data);
+		}
+	}
+	public function addimage2($id)
+	{
+		$detail_sale = $this->salemodel->detail($id);	
+		if($this->input->post())
+		{
+			$file = $this->input->post('file');
+			if($file!='')
+			{
+				
+				if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img']) && $detail_sale[0]['img']!='')
+				{
+					unlink(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img']);
+				}
+				$data_save = array('img'=>$file);
+				$this->salemodel->update($id,$data_save);
+				$array = array('error' => 0, 'msg' => "Thành công");
+       			echo json_encode($array);
+			}
+		}	
+		else
+		{
+			$this->data['sale_detail'] = $detail_sale;
+			$this->load->view('sale/ajax_admin_add_image2',$this->data);
+		}
+	}
+	public function addimage3($id)
+	{
+		$detail_sale = $this->salemodel->detail($id);	
+		if($this->input->post())
+		{
+			$file = $this->input->post('file');
+			if($file!='')
+			{
+				$detail_sale = $this->salemodel->detail($id);	
+				if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img_scroll']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img_scroll']) && $detail_sale[0]['img_scroll']!='')
+				{
+					unlink(PATH_FOLDER.ROT_DIR.'file/uploads/sale_off/'.$detail_sale[0]['img_scroll']);
+				}
+				$data_save = array('img_scroll'=>$file);
+				$this->salemodel->update($id,$data_save);
+				$array = array('error' => 0, 'msg' => "Thành công");
+       			echo json_encode($array);
+			}
+		}	
+		else
+		{
+			$this->data['sale_detail'] = $detail_sale;
+			$this->load->view('sale/ajax_admin_add_image3',$this->data);
+		}
+	}
      public function delete($id)
     {
         if(empty($id))

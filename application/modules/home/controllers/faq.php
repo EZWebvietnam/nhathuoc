@@ -14,6 +14,8 @@ class Faq extends MY_Controller
 		$this->load->model('producthomemodel');
 		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();
 		$this->load->model('faqhomemodel');
+		$this->load->model('catehomemodel');
+		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
 	}
 	public function list_faq()
 	{

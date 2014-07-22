@@ -57,7 +57,7 @@ class Product extends MY_Controller
 			$this->data['list_product_by_cate'] = $this->producthomemodel->list_product_by_cate_detail($product_detail[0]['id_cate']);
 			$this->data['cate_detail'] = $this->catehomemodel->cate_detail($product_detail[0]['id_cate']);
 			$this->data['list_comment'] = $this->producthomemodel->list_comment($id);
-			$this->data['header']['title'] = $product_detail[0]['title'].'-Tibimart.com';
+			$this->data['header']['title'] = $product_detail[0]['title'];
 			$this->data['product_detail'] = $product_detail;
 			$this->data['main_content'] = 'detail_product_view';
 			$this->load->view('home/layout_product_detail',$this->data);
@@ -129,7 +129,7 @@ class Product extends MY_Controller
 		}
 		$num_pages = ceil($config['total_rows'] / $config['per_page']);
 		$array_sv  = $this->producthomemodel->list_product_list($id_cate,$config['per_page'], $page1);
-		$this->data['header']['title'] = $this->data['cate_detail_'][0]['title'].'- Tibimart.com';
+		$this->data['header']['title'] = $this->data['cate_detail_'][0]['title'];
 		$this->data['total_page'] = $num_pages;
 		$this->data['offset'] = $page1;
 		$this->data['page'] = $page;

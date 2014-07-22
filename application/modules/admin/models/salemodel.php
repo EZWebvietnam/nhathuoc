@@ -46,5 +46,16 @@ class Salemodel extends CI_Model
     {
         $this->db->delete('sale_off',array('id'=>$id));
     }
+	public function update($id,array $data)
+    {
+		$this->db->where('id',$id);
+        $this->db->update('sale_off',$data);
+    }
+	 public function detail($id)
+    {
+        $sql="SELECT * FROM sale_off WHERE id = $id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Combo tinh dầu thiên nhiên tràm và tinh dầu nghệ</title>
+		<title><?php echo $header['title']?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="keywords" content="tinh dầu thiên nhiên, tinh dầu tự nhiên, tinh dầu tràm, tinh dầu nghệ"/>
-		<meta name="description" content="Phòng và điều trị mụn lâu ngày, mụn trứng cá, mụn đầu đen, mụn do đến tuổi dạy thì, xóa các vết thương do vi khuẩn nấm gây ra, dưỡng ẩm hiệu quả cho da, xóa hết vết thâm do mụn để lại nhờ tinh dầu Nghệ."/>
+		<meta name="keywords" content="<?php echo $header['keywords']?>"/>
+		<meta name="description" content="<?php echo $header['description']?>"/>
 		<meta name="google-site-verification" content="lfytPfSr1IDiT1R8qHpHv7MDRdbrFj4jMAb8m2bFbig" />
 		<link rel="shortcut icon" href="images/favicon.ico"/>
-		<meta content="Dang hoai Bac &lt;nguoi34@gmail.com&gt;" name="author">
+		<meta content="<?php echo $header['author']?>" name="author">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/css/jquery.autocomplete.css"  />
@@ -67,7 +67,7 @@
 			<div id="wrapper">
 				<div id="header">
 					<div id="logo">
-						<a href="/" target="_self" title="Logo"><img class="lazy" alt="Logo" src="/data/banner/logo_4.png" /></a>
+						<a href="/" target="_self" title="Logo"><img class="lazy" alt="Logo" src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo'];?>" /></a>
 					</div>
 					<div id="top_info">
 						<a href="" target="_blank" title="banner hotline"><img class="lazy" alt="banner hotline" src="/data/banner/ybi1369099847.gif" /></a>
@@ -128,7 +128,7 @@
 						
 						<li ><a  class="mt_it" href="<?php echo base_url();?>khuyen-mai" target="_self" rel="">Khuyến mại</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></li>
 						
-						<li ><a  class="mt_it" href="<?php echo base_url();?>gioi-thieu" target="_self" rel="">Liên hệ</a></li>
+						<li ><a  class="mt_it" href="<?php echo base_url();?>lien-he" target="_self" rel="">Liên hệ</a></li>
 					</ul>
 					<script type="text/javascript">
 						var menu=new menu.dd('menu');
@@ -668,14 +668,6 @@
 									<p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Arial;"><strong>Email:</strong> <?php echo $about[0]['email'];?></span></span></p>
 									<p style="text-align: justify;"><em><strong><span style="font-size: small;"><span style="font-family: Arial;">Mọi th&ocirc;ng tin tr&ecirc;n website chỉ mang t&iacute;nh chất tham khảo.</span></span></strong></em></p>
 									<p style="text-align: justify;"><em><strong><span style="font-size: small;"><span style="font-family: Arial;">Việc sử dụng TPCN n&ecirc;n theo hướng dẫn của b&aacute;c sĩ, dược sĩ hoặc người c&oacute; chuy&ecirc;n m&ocirc;n.</span></span></strong></em></p>
-									<p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Arial;">&nbsp;</span></span></p>
-									<p style="text-align: justify;"><span id="1369301874012E" style="display: none;">&nbsp;</span></p>
-									<div style="width:1px;height:1px;display:none"><img src="http://static.novanet.vn/adverclient.js?code=653" alt="" /></div>
-									<div style="width:1px;height:1px;display:none"><img src="http://static.novanet.vn/adverclient.js?code=684" alt="" /></div>
-									<h3>
-										<div class="wmt11" style="position: absolute;display:block; text-indent:-0px; top: -160px; overflow: auto"><strong><em><a href="http://gameavatarhay.com/tai-facebook-mien-phi/" rel="dofollow" target="_blank" title="tai facebook">tai facebook</a></em></strong></div>
-									</h3>
-									<p><span style="position: absolute; top: -100px; overflow: auto"> <strong><em> <a href="http://gameandroidhot.net/" title="game android">game android</a> <a href="http://yugo.vn/phu-nu/" title="bao phu nu">bao phu nu</a>, <a href="http://yugo.vn/bao-moi/" title="bao moi">bao moi</a>, <a href="http://xulynuoc.com/" title="xu ly nuoc">xu ly nuoc</a> <a href="http://hungcatloi.com.vn/dich-vu/thanh-lap-cong-ty" title="thanh lap cong ty">thanh lap cong ty</a> <a href="http://gumua.com/thuoc-giam-can.html" title="thuoc giam can">thuoc giam can</a> </em></strong> </span></p>
 								</div>
 							</div>
 							
@@ -748,10 +740,10 @@
 									<div class="popup_hotline">
 										<div class="popup_ym">
 											<div class="popup_ym_label"><span>ĐT tư vấn và đặt hàng</span></div>
-											<div class="popup_ym_online"><a href="ymsgr:sendIM?tvgc01"><img src="http://opi.yahoo.com/online?u=tvgc01&m=g&t=1" alt="ĐT tư vấn và đặt hàng" /></a></div>
+											<div class="popup_ym_online"><a href="ymsgr:sendIM?<?php echo $header['yahoo']?>"><img src="http://opi.yahoo.com/online?u=<?php echo $header['yahoo']?>&m=g&t=1" alt="ĐT tư vấn và đặt hàng" /></a></div>
 										</div>
 										<div class="clear"></div>
-										<span class="hotline">1800.8155 / 0943.48.49.50</span>
+										<span class="hotline"><?php echo $header['phone']?></span>
 									</div>
 									<div class="clear"></div>
 								</div>

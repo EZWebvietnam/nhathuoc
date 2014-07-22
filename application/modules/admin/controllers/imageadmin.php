@@ -57,7 +57,7 @@ class Imageadmin extends MY_Controller
 			{
 				$config['image_library'] = 'gd2';
 				$config['source_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file');
-				$config['new_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$new_file.$this->input->post('file');
+				$config['new_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file');
 				$config['create_thumb'] = TRUE;
 				$config['maintain_ratio'] = FALSE;
 				$config['width'] = 1140;
@@ -68,7 +68,9 @@ class Imageadmin extends MY_Controller
 				
 				// resize image
 				$this->image_lib->resize();
-				$data_save = array('image'=>$file);
+				$title = $this->input->post('title');
+				$url = $this->input->post('url');
+				$data_save = array('image'=>$file,'title'=>$title,'url'=>$url);
 				$id = $this->faqmodel->insert_img($data_save);
 				if($id> 0)
 				{
@@ -92,6 +94,7 @@ class Imageadmin extends MY_Controller
 			$this->load->view('image/ajax_admin_add_image',$this->data);
 		}
 	}
+	
 	public function delete($id) {
        	$detail =$this->faqmodel->image_detail($id);
 		if(!empty($detail))

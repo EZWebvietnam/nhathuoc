@@ -13,6 +13,8 @@ class Home extends MY_Controller {
 		parent::count_cart();
 		parent::about();
 		parent::rand_image();
+		$this->load->model('catehomemodel');
+		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
     }
 
     public function index() {
@@ -158,21 +160,21 @@ class Home extends MY_Controller {
     }
     public function about()
     {
-        $this->load->model('faq');
-        $this->load->model('productmodel');
-        $this->data['image']=$this->_create_captcha();
-        $this->data['list_product_sale'] = $this->productmodel->get_list_product_sale_off();
-        $this->data['about'] = $this->faq->about();
-        $this->data['main_content'] = 'home_view/detail_about';
-        $this->load->view('home/layout_detail', $this->data);
+        $this->load->model('faqhomemodel');
+        $this->data['about_'] = $this->faqhomemodel->description(1);
+		$this->data['header']['title'] = 'Giới thiệu';
+		$this->data['ís_about'] = 1;
+        $this->data['main_content'] = 'detail_about';
+        $this->load->view('home/layout_sale', $this->data);
     }
     public function payment()
     {
     	$this->load->model('orderhomemodel');
-    	$this->data['faq_detail'][0]['title'] = 'Hướng dẫn thanh toán';
+		$this->data['ís_about'] = 1;
+    	$this->data['header']['title'] = 'Hướng dẫn thanh toán';
     	$this->data['list_payment'] = $this->orderhomemodel->load_payment();
 		$this->data['main_content']='thanh_toan_v';
-		$this->load->view('home/layout_product_detail',$this->data);
+		$this->load->view('home/layout_sale',$this->data);
 	}
 	public function contact()
 	{
@@ -183,12 +185,11 @@ class Home extends MY_Controller {
 			$this->_send_email('contact','tibimarthcm@gmail.com','tibimarthcm@gmail.com',$data_mail,'Liên hệ');
 		}
 		
-		
-			$this->data['title'] = 'Liên hệ';
-			$this->data['gui_cau_hoi'] = 1;
-			$this->data['contact_'] = 1;
+			$this->data['header']['title'] = 'Liên hệ';
+			$this->data['ís_about'] = 1;
+			
 			$this->data['main_content']='contact_view';
-			$this->load->view('home/layout_contact',$this->data);
+			$this->load->view('home/layout_sale',$this->data);
 		
 		
 	}

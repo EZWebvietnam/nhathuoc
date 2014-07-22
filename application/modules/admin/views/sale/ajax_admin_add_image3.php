@@ -13,29 +13,18 @@
 </div>
 <div class="m-pop">
     <script type="text/javascript" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/js/core/price_format.js"></script>
-    <form action="<?php echo base_url(); ?>admin/imageadmin/add" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="adminform">
+    <form action="<?php echo base_url(); ?>admin/saleadmin/addimage1/<?php echo $sale_detail[0]['id']?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="adminform">
+	<?php 
+	$id = $sale_detail[0]['id'];
+	?>
         <table class="form" style="width: 1200px;">
-
-            
             <tr>
                 <td class="label">Hình ảnh</td>
                 <td colspan="3">
                     <input type="file" name="userfile"/>
-                    <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/upload_image_slide','upload','<?php echo base_url(); ?>admin/imageadmin/add'); return false;">
+                    <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/do_sale','upload','<?php echo base_url(); ?>admin/saleadmin/addimage1/<?php echo $id;?>'); return false;">
                    <div id="upload"></div>
                     <input type='hidden' name='file' id='file'/>
-                </td>
-            </tr>
-            <tr>
-                <td class="label">Tiêu đề</td>
-                <td colspan="3">
-                    <input type="text" name="title" id="title"/>
-                </td>
-            </tr>
-			<tr>
-                <td class="label">Url</td>
-                <td colspan="3">
-                    <input type="text" name="url" id="url"/>
                 </td>
             </tr>
             <td><input class="bt100" type="submit" value="Thêm"></td>
@@ -72,7 +61,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {file:$('#file').val(),title:$('#title').val(),url:$('#url').val()},
+                    data: {file:$('#file').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

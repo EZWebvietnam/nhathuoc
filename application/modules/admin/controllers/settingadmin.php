@@ -94,6 +94,7 @@ class Settingadmin extends MY_Controller {
             $file = $this->input->post('file');
             if($file!='')
             {
+				
                 $root->appendChild($doc->createElement('logo', $file));
             }
             else
@@ -106,6 +107,10 @@ class Settingadmin extends MY_Controller {
             $root->appendChild($doc->createElement('description', $this->input->post('descriptions')));
             $root->appendChild($doc->createTextNode("\n"));
             $root->appendChild($doc->createElement('title', $this->input->post('title')));
+            $root->appendChild($doc->createTextNode("\n"));
+			$root->appendChild($doc->createElement('yahoo', $this->input->post('yahoo')));
+            $root->appendChild($doc->createTextNode("\n"));
+			$root->appendChild($doc->createElement('phone', $this->input->post('phone')));
             $root->appendChild($doc->createTextNode("\n"));
             $doc->save($link);
             $data_msg = array('error' => 0, 'msg' => 'Update Setting thanh cong');
@@ -142,8 +147,12 @@ class Settingadmin extends MY_Controller {
                 $title = $tit->item(0)->nodeValue;
 				$gt = $employee->getElementsByTagName("gioithieu");
                 $gioithieu = $gt->item(0)->nodeValue;
+				$yh = $employee->getElementsByTagName("yahoo");
+                $yahoo = $yh->item(0)->nodeValue;
+				$pn = $employee->getElementsByTagName("phone");
+                $phone = $pn->item(0)->nodeValue;
                 $data_setting = array('author' => $name, 'publisher' => $pubs, 'copyright' => $cop, 'robots' => $robots,
-                    'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu);
+                    'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu,'yahoo'=>$yahoo,'phone'=>$phone);
             }
             $this->data['setting'] = $data_setting;
             $this->load->view('setting/ajax_admin_edit_setting', $this->data);
