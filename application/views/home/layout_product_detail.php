@@ -43,6 +43,8 @@
 		<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/js/thickbox.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/js/swfobject.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/js/jquery.countdown.js"></script>
+		
+		<script src='<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/zoom/jquery.elevatezoom.js'></script>
 	</head>
 	<body>
 	<script>
@@ -70,7 +72,7 @@
 						<a href="/" target="_self" title="Logo"><img class="lazy" alt="Logo" src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo'];?>" /></a>
 					</div>
 					<div id="top_info">
-						<a href="" target="_blank" title="banner hotline"><img class="lazy" alt="banner hotline" src="/data/banner/ybi1369099847.gif" /></a>
+						<a href="" target="_blank" title="banner hotline"><img class="lazy" alt="banner hotline" src="<?php echo base_url();?>file/uploads/ybi1369099847.gif" /></a>
 					</div>
 					<!--end #top_info-->	
 					<div id="cart_user">
@@ -204,15 +206,20 @@
 							<div class="image">
 								<div class="clear"></div>
 								<div>
+								
 								<?php 
 								if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_detail[0]['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_detail[0]['image']) && $product_detail[0]['image']!='')
 								{
 								
 								?>
-								<a class="zoom_in" title="<?php echo $product_detail[0]['title'];?>" href="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image'];?>"><img alt="<?php echo $product_detail[0]['title'];?>" class="lazy" src="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image'];?>" /></a>
+								<a class="zoom_in" title="<?php echo $product_detail[0]['title'];?>" href="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image'];?>"><img id="zoom_01" alt="<?php echo $product_detail[0]['title'];?>" class="lazy" src="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image'];?>" data-zoom-image="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image'];?>" /></a>
 								<?php } else { ?>
 								<a class="zoom_in" title="<?php echo $product_detail[0]['title'];?>" href="<?php echo base_url();?>file/uploads/no_image.gif"><img alt="<?php echo $product_detail[0]['title'];?>" class="lazy" src="<?php echo base_url();?>file/uploads/no_image.gif" /></a>
 								<?php } ?>
+								<script>
+									$("#zoom_01").elevateZoom({ zoomWindowFadeIn: 500, zoomWindowFadeOut: 500, lensFadeIn: 500, lensFadeOut: 500 });
+								   
+								</script>
 								</div>
 								<div class="clear"></div>
 								<div class="pd_share">
@@ -221,7 +228,7 @@
 										<a class="addthis_counter addthis_pill_style"></a>
 									</div>
 									<script type="text/javascript"> var addthis_config = {"data_track_clickback":true};</script>
-									<script type="text/javascript" src="http://s7.addthis.comjs/250/addthis_widget.js#pubid=ra-4dd331294ee7e605"></script>
+									
 								</div>
 								<div class="clear"></div>
 								<div class="tool">

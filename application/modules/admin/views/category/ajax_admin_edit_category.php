@@ -36,97 +36,6 @@
                 </td>
             </tr>
             
-			<tr>
-                <td class="label">Parent Lable</td>
-                <td colspan="3">
-                    <select name="parent_lable" id="parent_lable">
-	                  <?php 
-	                  if($cate_detail[0]['lable']!=0)
-	                  {
-					  
-	                  ?>
-	                  <option value="0" selected="">Không</option>
-	                  <option value="1" >Có</option>
-	                  <?php } else {?>
-	                  <option value="0" >Không</option>
-	                  <option value="1" selected="">Có</option>
-	                  <?php } ?>
-                   </select>
-                </td>
-            </tr>
-            <tr>
-                <td class="label">Chạy trực tiếp vào sản phẩm</td>
-                <?php 
-                $this->load->model('productmodel');
-                $list_product = $this->productmodel->list_product_cate();
-                ?>
-                <td colspan="3">
-                    <select name="id_product" id="id_product" <?php echo $dis;?>>
-	                   <option value="0">Không chạy trực tiếp</option>
-	                   <?php 
-	                   foreach($list_product as $l_product)
-	                   {
-					   	if($cate_detail[0]['product'] == $l_product['id_product'])
-					   	{
-						
-	                   ?>
-	                   <option selected="" value="<?php echo $l_product['id_product']?>"><?php echo $l_product['title']?></option>	
-	                   <?php } else {?>
-	                    <option value="<?php echo $l_product['id_product']?>"><?php echo $l_product['title']?></option>	
-	                   <?php }} ?>
-                   </select>
-                </td>
-            </tr>
-			<tr>
-				<?php 
-				$lable = $this->categorymodel->list_lable();
-				?>
-                <td class="label">Thuộc Lable</td>
-                <td colspan="3">
-                    <select name="lable" id="lable" <?php echo $dis?>>
-					<?php 
-					foreach($lable as $l_ble)
-					{
-						if($l_ble['id_cate']!= $cate_detail[0]['id_cate'])
-						{
-						
-						if($l_ble['id_cate'] == $cate_detail[0]['lable'])
-						{
-							$select = "selected";	
-						}
-						else
-						{
-							$select = "";	
-						}
-					?>
-	                   <option <?php echo $select?> value="<?php echo $l_ble['id_cate']?>"><?php echo $l_ble['title']?></option>
-					<?php 	
-						} } ?>
-                   </select>
-                </td>
-            </tr>
-            <tr>
-                <td class="label">Hiện trang chủ</td>
-                
-                <td colspan="3">
-                   <select name="radio" id="radio" <?php echo $dis?>>
-                   <?php 
-                   foreach($array as $k=>$v)
-                   {
-				   	if($k == $cate_detail[0]['show_home'])
-				   	{
-						$select = "selected";	
-					}
-					else
-					{
-						$select = "";	
-					}
-                   ?>
-	                   <option <?php echo $select;?> value="<?php echo $k;?>"><?php echo $v?></option>
-	               <?php } ?>   
-                   </select>
-                </td>
-            </tr>
             <td><input class="bt100" type="submit" value="Thêm"></td>
 
             </tr>
@@ -137,22 +46,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         //$('#cost_').priceFormat();
-		$('#parent_lable').change(function(){
-			var lable = $(this).val();	
-			if(lable == 1)
-			{
-				$('#lable').attr('disabled','disabled');
-				$('#radio').attr('disabled','disabled');
-				$('#id_product').attr('disabled','disabled');
-			}
-			else
-			{
-				$('#lable').attr('disabled',false);
-				$('#radio').attr('disabled',false);
-				$('#id_product').attr('disabled',false);
-			}
-			
-		});
+		
         $("#adminform").validate({
             rules: {
                 title: "required",
@@ -177,7 +71,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),radio:$('#radio').val(),parent_lable:$('#parent_lable').val(),lable:$('#lable').val(),id_product:$('#id_product').val()},
+                    data: {title:$('#title_').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

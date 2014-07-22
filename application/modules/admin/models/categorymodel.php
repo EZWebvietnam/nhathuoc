@@ -7,7 +7,7 @@ class Categorymodel extends CI_Model
     }
     public function list_category()
     {
-        $sql="SELECT * FROM cate_product WHERE product = 0";
+        $sql="SELECT * FROM cate_product";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

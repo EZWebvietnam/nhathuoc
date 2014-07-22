@@ -74,20 +74,7 @@ class Categoryadmin extends MY_Controller
     	{
 			$data_save = array();
 			$title = $this->input->post('title');
-			$parent_lable = $this->input->post('parent_lable');
-			$id_product = $this->input->post('id_product');
-			$data_save = array('title'=>$title,'product'=>$id_product);
-			if($parent_lable == 1)
-			{
-				$data_save['lable'] = 0;
-				$radio = 0;
-			}
-			else
-			{
-				$data_save['lable'] = $this->input->post('lable');
-				$radio = $this->input->post('radio');
-			}
-			$data_save['show_home'] = $radio;
+			$data_save = array('title'=>$title);
 			$id = $this->categorymodel->add($data_save);
 			if($id>0)
 			{
@@ -112,23 +99,8 @@ class Categoryadmin extends MY_Controller
     	{
 			
 			$title = $this->input->post('title');
-			$parent_lable = $this->input->post('parent_lable');
-			$id_product = $this->input->post('id_product');
 			$data_save = array();
-			$data_save = array('title'=>$title,'product'=>$id_product);
-			
-			if($parent_lable == 1)
-			{
-				$data_save['lable'] = 0;
-				$radio = 0;
-			}
-			else
-			{
-				$data_save['lable'] = $this->input->post('lable');
-				$radio = $this->input->post('radio');
-			
-			}
-			$data_save['show_home'] = $radio;
+			$data_save = array('title'=>$title);
 			$id = $this->categorymodel->update_cate($id,$data_save);
 			$array = array('error' => 0, 'msg' => "Update thanh cong");
        		echo json_encode($array);

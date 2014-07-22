@@ -63,12 +63,7 @@
                     <input type='hidden' name='file' id='file'/>
                 </td>
             </tr>
-            <tr>
-                <td class="label">Lưu ý</td>
-                <td colspan="3">
-                   <textarea name="luu_y" id="luu_y" style="margin: 2px; width: 1070px; height: 60px;"></textarea>
-                </td>
-            </tr>
+           
             <tr>
                 <td class="label">Nội dung</td>
                 <td colspan="3">
