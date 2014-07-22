@@ -134,7 +134,7 @@ $time_start = microtime_float();
                                                     {
                                                     ?>
 													<li class="main">
-                                                                <a href="<?php echo base_url(); ?>admin/clubadmin/list_club" rel="sale" class="v_link">
+                                                                <a href="<?php echo base_url(); ?>admin/clubadmin/list_club" rel="about" class="v_link">
                                                                     <div><img width="32" height="32" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/sale.png" alt=""></div>
                                                                     Giới thiệu
                                                                 </a>

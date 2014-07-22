@@ -86,7 +86,7 @@
                            <th class="checkbox"><input type="checkbox" name="sa" id="sa" onclick="check_chose('sa', 'ar_id[]', 'admindata_khoahoc')"></th>
                            <th class="id">Tên</th>
                            <th>Giới thiệu</th>
-                          
+                          <th>Hình ảnh</th>
                           
                            <th>Giá</th>
                            <th class="publish">Chức năng</th>
@@ -101,7 +101,16 @@
                         <td><?php echo $product_ref['title']?></td>
                         <td><?php echo sub_string(loaibohtmltrongvanban($product_ref['content']),300);?></td>
                        
-                        
+                        <td><?php
+                        if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_ref['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_ref['image']) && $product_ref['image']!='')
+                        {
+						
+                        ?>
+                        	<a target="_blank" href="<?php echo base_url();?>file/uploads/product/<?php echo $product_ref['image']?>"><img width="200" height="200" src="<?php echo base_url();?>file/uploads/product/<?php echo $product_ref['image']?>"></a>
+                        <?php } else {?>
+                        <img width="200" height="200" src="<?php echo base_url();?>file/uploads/no_image.gif">
+                        <?php } ?>	
+                        </td>
                         <td><?php echo $product_ref['price']?></td>
                         <td align="center"><a class="grouped_elements" href="<?php echo base_url();?>admin/productadmin/edit/<?php echo $product_ref['id_product']?>" title="Sửa"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
                             <a class="grouped_elements" href="<?php echo base_url();?>admin/productadmin/view/<?php echo $product_ref['id_product']?>" title="Xem chi tiết"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/view.png"></a>
