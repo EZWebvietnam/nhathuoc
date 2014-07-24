@@ -111,11 +111,33 @@
 							<a  class="mt_it" href="<?php echo base_url();?>san-pham" target="_self" rel="">Sản phẩm	</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span>
 							<ul>
 							<?php 
+							
 							foreach($list_cate_home as $cate_home)
 							{
+								$list_cate_lable = array();
+								$list_cate_lable = $this->catehomemodel->list_cate_lable($cate_home['id_cate']);
+								
 							?>
-							<li class="sub_it"><a   href="<?php echo base_url();?>san-pham/c/<?php echo $cate_home['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_home['title'])));?>" target="_self" rel="nofollow"><?php echo $cate_home['title']?></a></li>
-							<?php }  ?>
+							<li class="sub_it"><a   href="<?php echo base_url();?>san-pham/c/<?php echo $cate_home['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_home['title'])));?>" target="_self" rel="nofollow"><?php echo $cate_home['title']?></a>
+							<?php 
+							if(!empty($list_cate_lable))
+							{
+								?> 
+								<ul style="margin-top:1px;">
+							<?php 
+							foreach($list_cate_lable as $c_lb)
+								{
+								
+							?>
+							
+								<li class="sub_it"><a   href="<?php echo base_url();?>san-pham/c/<?php echo $c_lb['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($c_lb['title'])));?>" target="_self" rel="nofollow"><?php echo $c_lb['title']?></a>
+							
+							<?php } ?> 
+							</ul>
+							<?php }
+							?>
+							</li>
+							<?php } ?>
 								
 								
 							</ul>
@@ -201,20 +223,27 @@
 						</script>
 						
 						<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" alt="spacer" width="10" height="10" /></div>
-						<div class="box_menu">
-						<div class="title">Nhóm sản phẩm</div>
-							<?php 
+						<?php 
 							foreach($list_cate_home as $cate_home)
 							{
+								
 							?>
-							<div class="li_link"><a rel="" href="<?php echo base_url();?>san-pham/c/<?php echo $cate_home['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_home['title'])));?>" target="_self"><?php echo $cate_home['title']?></a></div>
-							<?php }  ?>
+						<div class="box_menu">
+							<div class="title"><?php echo $cate_home['title']?></div>
+							<?php 
+								$list_cate_lable = $this->catehomemodel->list_cate_lable($cate_home['id_cate']);
+								foreach($list_cate_lable as $c_lb)
+								{
+								?>
+							<a rel="" href="<?php echo base_url();?>san-pham/c/<?php echo $c_lb['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($c_lb['title'])));?>" target="_self"><?php echo $c_lb['title']?></a>
+							<?php } ?>
 							<div class="clear"></div>
-							<div class="li_link">
-								<a href="/nhom-hang.html" title="Xem tất cả">Xem tất cả</a>
+							<div class="box_menu_more">
+								<a href="<?php echo base_url();?>san-pham" title="Xem tất cả">Xem tất cả</a>
 							</div>
-							
 						</div>
+						<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" width="10" height="10" alt="spacer" /></div>
+						<?php }  ?>
 						<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" alt="spacer" width="10" height="10" /></div>
 						<!--end .box_menu-->
 						<div class="clear"><img src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" alt="spacer" width="10" height="10" /></div>

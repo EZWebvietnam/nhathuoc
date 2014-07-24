@@ -75,6 +75,12 @@ class Categoryadmin extends MY_Controller
 			$data_save = array();
 			$title = $this->input->post('title');
 			$data_save = array('title'=>$title);
+			
+			if($this->input->post('parent_lable') == 0)
+			{
+				$data_save['lable'] = $this->input->post('lable');	
+			}
+			
 			$id = $this->categorymodel->add($data_save);
 			if($id>0)
 			{
@@ -101,6 +107,11 @@ class Categoryadmin extends MY_Controller
 			$title = $this->input->post('title');
 			$data_save = array();
 			$data_save = array('title'=>$title);
+			if($this->input->post('parent_lable') == 0)
+			{
+				$data_save['lable'] = $this->input->post('lable');	
+			}
+			
 			$id = $this->categorymodel->update_cate($id,$data_save);
 			$array = array('error' => 0, 'msg' => "Update thanh cong");
        		echo json_encode($array);

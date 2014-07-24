@@ -110,11 +110,33 @@
 							<a  class="mt_it" href="<?php echo base_url();?>san-pham" target="_self" rel="">Sản phẩm	</a><span><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span>
 							<ul>
 							<?php 
+							
 							foreach($list_cate_home as $cate_home)
 							{
+								$list_cate_lable = array();
+								$list_cate_lable = $this->catehomemodel->list_cate_lable($cate_home['id_cate']);
+								
 							?>
-							<li class="sub_it"><a   href="<?php echo base_url();?>san-pham/c/<?php echo $cate_home['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_home['title'])));?>" target="_self" rel="nofollow"><?php echo $cate_home['title']?></a></li>
-							<?php }  ?>
+							<li class="sub_it"><a   href="<?php echo base_url();?>san-pham/c/<?php echo $cate_home['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_home['title'])));?>" target="_self" rel="nofollow"><?php echo $cate_home['title']?></a>
+							<?php 
+							if(!empty($list_cate_lable))
+							{
+								?> 
+								<ul style="margin-top:1px;">
+							<?php 
+							foreach($list_cate_lable as $c_lb)
+								{
+								
+							?>
+							
+								<li class="sub_it"><a   href="<?php echo base_url();?>san-pham/c/<?php echo $c_lb['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($c_lb['title'])));?>" target="_self" rel="nofollow"><?php echo $c_lb['title']?></a>
+							
+							<?php } ?> 
+							</ul>
+							<?php }
+							?>
+							</li>
+							<?php } ?>
 								
 								
 							</ul>
