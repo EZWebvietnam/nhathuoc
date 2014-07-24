@@ -335,6 +335,7 @@
 									<li><a href="#pro_detail_label"><span class="left"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span><span class="main">Thông tin mô tả</span><span class="right"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></a></li>
 									<li id="pro_indications_label"><a href="#pro_indications" ><span class="left"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span><span class="main">Nhãn sản phẩm</span><span class="right"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></a></li>
 									<li><a href="#pro_generate_vote"><span class="left"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span><span class="main">Đánh giá sản phẩm</span><span class="right"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></a></li>
+									<li><a href="#comment_fb"><span class="left"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span><span class="main">Comment Facebook</span><span class="right"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></span></a></li>
 								</ul>
 								<div class="clear"></div>
 							</div>
@@ -362,6 +363,7 @@
 									<!-- End .pro_goto -->
 									<!---END 3 NUT XEM THEM--------->
 								</div>
+								
 								<!--end .pro_detail_label-->
 								<div id="pro_indications" class="pro_detail_label">
 									<div>
@@ -466,6 +468,13 @@
 									</div>
 									<!-- End .pro_goto -->
 									<!---END 3 NUT XEM THEM--------->
+								</div>
+								<div class="pro_detail_label" id="comment_fb" style="display:none;">
+									<center>
+									<div class="fb-like" data-href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product'];?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title'])));?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+									<div class="fb-comments" data-href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product'];?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title'])));?>" data-numposts="5" data-colorscheme="light"></div></center>
+									
+									
 								</div>
 								<!--end .pro_generate_vote-->
 							</div>
