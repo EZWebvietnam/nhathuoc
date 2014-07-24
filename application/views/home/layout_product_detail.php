@@ -471,7 +471,10 @@
 								</div>
 								<div class="pro_detail_label" id="comment_fb" style="display:none;">
 									<center>
-									<div class="fb-like" data-href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product'];?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title'])));?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+								
+									<div class="fb-like" data-href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product'];?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title'])));?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+									<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
 									<div class="fb-comments" data-href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product'];?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title'])));?>" data-numposts="5" data-colorscheme="light"></div></center>
 									
 									
@@ -705,6 +708,56 @@ Histats.track_hits();} catch(err){};
 									<p style="text-align: justify;"><em><strong><span style="font-size: small;"><span style="font-family: Arial;">Mọi th&ocirc;ng tin tr&ecirc;n website chỉ mang t&iacute;nh chất tham khảo.</span></span></strong></em></p>
 									<p style="text-align: justify;"><em><strong><span style="font-size: small;"><span style="font-family: Arial;">Việc sử dụng TPCN n&ecirc;n theo hướng dẫn của b&aacute;c sĩ, dược sĩ hoặc người c&oacute; chuy&ecirc;n m&ocirc;n.</span></span></strong></em></p>
 								</div>
+							</div>
+							
+							<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>
+						</div>
+						<div id="copy_info" style="margin-left:5px; !important;">
+							<div class="info">
+								<div>
+									<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAZ7yY9gsPiLaOraj_eOfWd0e9Bidg0dPc&sensor=true" type="text/javascript"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript">
+    var map;
+    var infowindow;
+    var marker = new Array();
+    var old_id = 0;
+    var infoWindowArray = new Array();
+    var infowindow_array = new Array();
+    function initialize(a, b, c) {
+        var defaultLatLng = new google.maps.LatLng(a, b);
+        var myOptions = { zoom: 16, center: defaultLatLng, scrollwheel: false, mapTypeId: google.maps.MapTypeId.ROADMAP };
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); map.setCenter(defaultLatLng);
+        var arrLatLng = new google.maps.LatLng(a, b);
+        infoWindowArray[1161] = c;
+        //infoWindowArray[1161] = '<div class="inforCty"><b>HaThanhAuto.com – THẾ GIỚI PHỤ TÙNG Ô TÔ NHẬP KHẨU-DẦU NHỚT PHỤ GIA Ô TÔ.</b></div><div class="infoAdd"><b>Địa chỉ</b>: Số 2 ngõ 77 Xuân la – Tây hồ - Hà Nội</div><div class="infoAdd"><b>Điện thoại: 0942 399 366 </b><br/> <b>  Website: </b><a href="http://www.hathanhauto.com" target="_blank">www.hathanhauto.com</a></div>';
+        loadMarker(arrLatLng, infoWindowArray[1161], 1161);
+        moveToMaker(1161);
+    }
+
+    function loadMarker(myLocation, myInfoWindow, id) {
+        marker[id] = new google.maps.Marker({ position: myLocation, map: map, visible: true });
+        var popup = myInfoWindow; infowindow_array[id] = new google.maps.InfoWindow({ content: popup });
+        google.maps.event.addListener(marker[id], 'mouseover', function () {
+            if (id == old_id) return;
+            if (old_id > 0) infowindow_array[old_id].close();
+            infowindow_array[id].open(map, marker[id]);
+            old_id = id;
+        });
+        google.maps.event.addListener(infowindow_array[id], 'closeclick', function () { old_id = 0; });
+    }
+
+    function moveToMaker(id) {
+        var location = marker[id].position; map.setCenter(location);
+        if (old_id > 0) infowindow_array[old_id].close();
+        infowindow_array[id].open(map, marker[id]);
+        old_id = id;
+    }
+</script>
+<div id='map_canvas' style='width: 500px; height: 115px'></div><script type='text/javascript'>initialize(<?php echo LAT?>,<?php echo LONG?>,"<div class='inforCty' style='text-align:left;'><b><?php echo TITLE;?></b></div>")</script>
+								</div>
+								
 							</div>
 							
 							<div class="clear"><img class="spacer" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/images/spacer.gif" /></div>

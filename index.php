@@ -224,6 +224,7 @@ if (defined('ENVIRONMENT'))
  }
  define('LAT','10.8408666');
  define('LONG','106.7169267');
+  define('TITLE','xxx');
 require_once BASEPATH.'core/CodeIgniter.php';
 
 /* End of file index.php */
