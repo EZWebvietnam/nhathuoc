@@ -5,16 +5,21 @@ class Home extends MY_Controller {
     public function __construct() {
         parent::__construct();
 		parent::list_cate();
-		parent::count_cart();
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
 		parent::load_cart();
-		parent::count_cart();
+		
 		parent::about();
 		parent::rand_image();
+		$this->load->library('session');
 		$this->load->model('catehomemodel');
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
+		if(!isset($_SESSION['code_random']))
+		{
+			$_SESSION['code_random'] = 	rand_string(6);
+		}
+		parent::count_cart($_SESSION['code_random']);
     }
 
     public function index() {

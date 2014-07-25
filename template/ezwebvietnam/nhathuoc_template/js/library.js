@@ -120,12 +120,15 @@ function add2cart(obj){
 			data: {action:'add2cart',pID:pID,pQty:pQty},
 			success : function(data){
 						if(data.code==0) {
-							//$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); 
+							$('#cartTotal span').html('Giỏ hàng \('+data.numItem+'\)'); 
 							//$('#popCart').html(data.short); 
-							//$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); 
+							$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); 
 							if(pQuality.length && data.limit>0) pQuality.val(data.limit); 
 							if(data.url!='') $(window.location).attr('href',data.url);
 						}else{	
+							$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); 
+							//$('#popCart').html(data.short); 
+							$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫');
 							Boxy.alert(data.message,function(){},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });
 						}
 					},

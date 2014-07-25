@@ -44,6 +44,7 @@
 		<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template//js/swfobject.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template//js/jquery.countdown.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/nhathuoc_template/js/paging.js"></script>
+		
 	</head>
 	<body>
 		<div id="wrapper_top">
@@ -468,7 +469,7 @@
 										?>
 										<div class="pit_price"><span class="price bold"><?php echo number_format($price);?> ₫</span></div>
 										<div class="clear"></div>
-										<div class="pit_cart"><a class="add_cart" href="#" rel="ZGxlBN" title="Mua hàng"><span>Mua hàng</span></a></div>
+										<div class="pit_cart"><a class="add_cart" href="#" rel="<?php echo $product_sale['id_product']?>" title="Mua hàng"><span>Mua hàng</span></a></div>
 										<div class="clear"></div>
 									</div>
 									<!--end .product_item_teaser-->
@@ -556,7 +557,7 @@
 									<?php } else { ?>
 									<span class="b fl">Giá bán:&nbsp;</span> <span class="red fl"><?php echo number_format($price);?> ₫</span>
 									<?php } ?>
-									<a class="add_cart" href="#" rel="ZGxkZt" title="Mua hàng"><span>Mua hàng</span></a>
+									<a class="add_cart" href="#" rel="<?php echo $ban_chay_1['id_product']?>" title="Mua hàng"><span>Mua hàng</span></a>
 								</div>
 								<!--end .product_item_teaser-->
 							</div>
@@ -637,7 +638,7 @@
 									}
 									?>
 									<span class="b fl">Giá bán:&nbsp;</span> <span class="red fl"><?php echo number_format($price);?> ₫</span>                    <!--<span class="price bold"> </span>-->
-									<a class="add_cart" href="#" rel="ZGx0Zj" title="Mua hàng"><span>Mua hàng</span></a>
+									<a class="add_cart" href="#" rel="<?php echo $product_new['id_product']?>" title="Mua hàng"><span>Mua hàng</span></a>
 								</div>
 								<!--end .product_item_teaser-->
 							</div>

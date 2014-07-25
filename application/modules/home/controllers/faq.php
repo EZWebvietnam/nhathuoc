@@ -5,17 +5,22 @@ class Faq extends MY_Controller
 	{
 		parent::__construct();
 		parent::list_cate();
-		parent::count_cart();
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
-		parent::count_cart();
+		
 		parent::about();
 		$this->load->model('producthomemodel');
 		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();
 		$this->load->model('faqhomemodel');
 		$this->load->model('catehomemodel');
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
+		$this->load->library('session');
+		if(!isset($_SESSION['code_random']))
+		{
+			$_SESSION['code_random']= rand_string(6);
+		}
+		parent::count_cart($_SESSION['code_random']);
 	}
 	public function list_faq()
 	{

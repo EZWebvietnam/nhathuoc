@@ -7,16 +7,22 @@ class Product extends MY_Controller
 		$this->load->model('producthomemodel');
 		$this->load->model('cartmodel');
 		parent::list_cate();
-		parent::count_cart();
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
 		parent::load_cart();
-		parent::count_cart();
+		
 		$this->load->model('catehomemodel');
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
 		$this->data['sale_random'] = $this->producthomemodel->get_sale_rand();
 		parent::about();
+		$this->load->library('session');
+		if(!isset($_SESSION['code_random']))
+		{
+			$_SESSION['code_random'] = 	rand_string(6);
+		}
+		parent::count_cart($_SESSION['code_random']);
+		
 	}
 	public function product_detail($id = null)
 	{
@@ -207,6 +213,7 @@ class Product extends MY_Controller
 		{
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
+		$ip = $_SESSION['code_random'];
 		$list_cart = $this->cartmodel->list_cart_ip($ip);
 		$this->data['list_cart'] = $list_cart;
 		$this->load->view('home/layout_cart',$this->data);
@@ -226,6 +233,7 @@ class Product extends MY_Controller
 		{
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
+		$ip = $_SESSION['code_random'];
 		$list_cart = $this->cartmodel->list_cart_ip($ip);
 		$this->data['list_cart'] = $list_cart;
 		$this->load->view('ajax_cart',$this->data);
@@ -268,6 +276,7 @@ class Product extends MY_Controller
 		{
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
+		$ip = $_SESSION['code_random'];
 		$list_cart = $this->cartmodel->list_cart_ip($ip);
 		$this->data['list_cart'] = $list_cart;
 		$this->load->view('ajax_cart',$this->data);
@@ -285,6 +294,7 @@ class Product extends MY_Controller
 		{
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
+		$ip = $_SESSION['code_random'];
 		$list_cart = $this->cartmodel->list_cart_ip($ip);
 		if(empty($list_cart))
 		{
@@ -378,7 +388,7 @@ class Product extends MY_Controller
     }
     public function ajax_html()
     {
-    	//print_r($_POST);exit;
+    	
 	    	if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 				$ip = $_SERVER['HTTP_CLIENT_IP'];
 			}
@@ -389,8 +399,8 @@ class Product extends MY_Controller
 			{
 				$ip = $_SERVER['REMOTE_ADDR'];
 			}
+			$ip = $_SESSION['code_random'];
     		$action = $this->input->post('action');
-    		
     		switch($action){
 				case 'add2cart':
 					$id_product     = $this->input->post('pID');
@@ -421,9 +431,17 @@ class Product extends MY_Controller
 					else
 					{
 						$data_save = array('id_product' =>$id_product,'quantity'   =>$quantity,'price'      =>$price,'total_price'=>$total_price,'ip'         =>$ip,'create_date'=>strtotime('now'));
-						$this->cartmodel->update_cart($cart_detail[0]['id'],$data_save);
+						$this->cartmodel->update_cart($ip,$cart_detail[0]['id'],$data_save);
 					}	
-					echo json_encode(array('code'=>1,'message'=>'Mua thành công'));
+					//print_r($data_save);exit;
+					$list_cart = $this->cartmodel->list_cart_ip($ip);
+					$total_money = 0;
+					foreach($list_cart as $cart_l)
+					{
+						$total_money+=$cart_l['total_price'];
+					}
+					$count = count($list_cart);
+					echo json_encode(array('code'=>1,'message'=>'Mua thành công','numItem'=>$count,'Total'=>number_format($total_money)));
 					break;
 				case 'checkComment':
 				{
@@ -470,6 +488,7 @@ class Product extends MY_Controller
 					{
 						$ip = $_SERVER['REMOTE_ADDR'];
 					}
+					$ip = $_SESSION['code_random'];
 					$list_cart = $this->cartmodel->list_cart_ip($ip);
 					$this->load->model('orderhomemodel');
 					$email     = $this->input->post('book_user_email');
@@ -502,7 +521,7 @@ class Product extends MY_Controller
 						$data_save_order_detail = array();
 					}
 					$this->cartmodel->delete_cart_ip($ip);
-					echo json_encode(array('error'=>false,'message'=>'Thành công, vui lòng chờ confirm','url'=>'http://localhost/nhathuoc/thanh-cong?code='.$code));
+					echo json_encode(array('error'=>false,'message'=>'Thành công, vui lòng chờ confirm','url'=>base_url()."thanh-cong?code=".$code));
 					break;	
 				}
 				case 'updateAll ':
@@ -529,14 +548,20 @@ class Product extends MY_Controller
 						$this->cartmodel->update_cart($ip,$v,$data_save);
 					}
 					
-					echo json_encode(array('error'=>false,'message'=>'Update thành công','url'=>'http://localhost/nhathuoc/gio-hang'));
+					echo json_encode(array('error'=>false,'message'=>'Update thành công','url'=>base_url().'gio-hang'));
 					break;	
 				}
 				case 'delItemInCart':
 				{
 					$id_product = $this->input->post('pID');
 					$this->cartmodel->delete_cart($ip,$id_product);
-					echo json_encode(array('error'=>false,'message'=>'Xóa thành công','url'=>'http://localhost/nhathuoc/gio-hang'));
+					echo json_encode(array('error'=>false,'message'=>'Xóa thành công','url'=>base_url().'gio-hang'));
+					break;
+				}
+				case 'delAll':
+				{
+					$id_product = $this->input->post('pID');
+					$this->cartmodel->delete_cart_ip($ip);
 					break;
 				}
 				case 'reg_newsletter':
@@ -545,7 +570,7 @@ class Product extends MY_Controller
 					$email_check = $this->producthomemodel->check_mail($email);
 					if($email_check){
 						
-						echo json_encode(array('error'=>false,'message'=>'Đăng ký thành công','url'=>'http://localhost/nhathuoc'));
+						echo json_encode(array('error'=>false,'message'=>'Đăng ký thành công','url'=>base_url()));
 					}
 					else
 					{
@@ -553,11 +578,11 @@ class Product extends MY_Controller
 						$id = $this->producthomemodel->insert_newsletter($data_new);	
 						if($id>0)
 						{
-							echo json_encode(array('error'=>false,'message'=>'Đăng ký thành công','url'=>'http://localhost/nhathuoc'));
+							echo json_encode(array('error'=>false,'message'=>'Đăng ký thành công','url'=>base_url()));
 						}
 						else
 						{
-							echo json_encode(array('error'=>true,'message'=>'Đăng ký thất bại','url'=>'http://localhost/nhathuoc'));	
+							echo json_encode(array('error'=>true,'message'=>'Đăng ký thất bại','url'=>base_url()));	
 						}
 					}
 					break;	
