@@ -120,7 +120,7 @@ function add2cart(obj){
 			data: {action:'add2cart',pID:pID,pQty:pQty},
 			success : function(data){
 						if(data.code==0) {
-							$('#cartTotal span').html('Giỏ hàng \('+data.numItem+'\)'); 
+							$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); 
 							//$('#popCart').html(data.short); 
 							$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); 
 							if(pQuality.length && data.limit>0) pQuality.val(data.limit); 
@@ -139,6 +139,7 @@ function add2cart(obj){
 function add_cart(obj){
 	var pID = $(obj).attr('rel');
 	var pQuality = $('#pd_quality_'+pID);
+	
 	if(pQuality.length) pQty = pQuality.val();
 	else pQty = 1;
 	if(pQty<1) {
@@ -151,10 +152,18 @@ function add_cart(obj){
 		dataType : 'json',
 		data: {action:'add2cart',pID:pID,pQty:pQty},
 		success : function(data){
-					if(data.code==0) {							
+					if(data.code==0) {
+						ajax_load_cart();
+						$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); 
+							//$('#popCart').html(data.short); 
+							$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); 							
 						if(pQuality.length && data.limit>0) pQuality.val(data.limit); 
 						if(data.url!='') $(window.location).attr('href',data.url);
 					}else{	
+							ajax_load_cart();
+							$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); 
+							//$('#popCart').html(data.short); 
+							$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); 
 						Boxy.alert(data.message,function(){},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });
 					}
 				},
@@ -177,16 +186,38 @@ function add_cart1(obj){
 		dataType : 'json',
 		data: {action:'add2cart',pID:pID,pQty:pQty},
 		success : function(data){
-					if(data.code==0) {							
+					if(data.code==0) {	
+						ajax_load_cart();
+						$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); 
+							//$('#popCart').html(data.short); 
+							$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); 						
 						if(pQuality.length && data.limit>0) pQuality.val(data.limit); 
 						if(data.url!='') $(window.location).attr('href',data.url);
+						
 					}else{	
+						ajax_load_cart();
+						$('#numCart').html('Giỏ hàng \('+data.numItem+'\)'); 
+							//$('#popCart').html(data.short); 
+							$('#cartTotal span').html('Tổng tiền: '+data.Total+' ₫'); 
 						Boxy.alert(data.message,function(){},{title:'Thông báo.',afterShow: function() { $('#boxy_button_OK').focus();} });
 					}
 				},
 		error : function(XMLHttpRequest, textStatus, errorThrown) {Boxy.alert('Có lỗi trong quá trình đưa lên máy chủ. Xin bạn vui lòng kiểm tra lại kết nối.',function(){},{title:'Thông báo.',afterShow: function() {$('#boxy_button_OK').focus();}});}
 	});
 	return false;
+}
+function ajax_load_cart()
+{
+	$.ajax({
+		type : 'POST',
+		url : base_url+'home/product/ajax_load_cart',
+		dataType : 'html',
+		data: '',
+		success : function(data){
+					$('#box_cart_detail').html(data);
+				},
+		error : function(XMLHttpRequest, textStatus, errorThrown) {Boxy.alert('Có lỗi trong quá trình đưa lên máy chủ. Xin bạn vui lòng kiểm tra lại kết nối.',function(){},{title:'Thông báo.',afterShow: function() {$('#boxy_button_OK').focus();}});}
+	});
 }
 function addCommnet(obj)
 {

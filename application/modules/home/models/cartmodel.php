@@ -50,9 +50,11 @@ class Cartmodel extends CI_Model
     }
     public function update_cart($ip,$id_cart,array $data)
     {
+		
         $id_cart = intval($id_cart);
-        $this->db->where('id_product',$id_cart);
+        $this->db->where('id',$id_cart);
          $this->db->where('ip',$ip);
+		 
         $this->db->update('cart',$data);
     }
     public function delete_cart($id_cart,$id_product)

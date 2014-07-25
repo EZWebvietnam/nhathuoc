@@ -10,7 +10,7 @@ class Product extends MY_Controller
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
-		parent::load_cart();
+		
 		
 		$this->load->model('catehomemodel');
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
@@ -22,7 +22,11 @@ class Product extends MY_Controller
 			$_SESSION['code_random'] = 	rand_string(6);
 		}
 		parent::count_cart($_SESSION['code_random']);
-		
+		parent::load_cart($_SESSION['code_random']);
+	}
+	public function ajax_load_cart()
+	{
+		$this->load->view('ajax_load_cart',$this->data);
 	}
 	public function product_detail($id = null)
 	{
@@ -49,6 +53,7 @@ class Product extends MY_Controller
 		{
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
+		$ip = $_SESSION['code_random'];
 		if(!$this->input->post('cart'))
 		{
 
@@ -401,6 +406,7 @@ class Product extends MY_Controller
 			}
 			$ip = $_SESSION['code_random'];
     		$action = $this->input->post('action');
+			
     		switch($action){
 				case 'add2cart':
 					$id_product     = $this->input->post('pID');
@@ -433,7 +439,7 @@ class Product extends MY_Controller
 						$data_save = array('id_product' =>$id_product,'quantity'   =>$quantity,'price'      =>$price,'total_price'=>$total_price,'ip'         =>$ip,'create_date'=>strtotime('now'));
 						$this->cartmodel->update_cart($ip,$cart_detail[0]['id'],$data_save);
 					}	
-					//print_r($data_save);exit;
+					
 					$list_cart = $this->cartmodel->list_cart_ip($ip);
 					$total_money = 0;
 					foreach($list_cart as $cart_l)

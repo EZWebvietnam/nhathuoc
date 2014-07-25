@@ -8,7 +8,7 @@ class Home extends MY_Controller {
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
-		parent::load_cart();
+		
 		
 		parent::about();
 		parent::rand_image();
@@ -20,6 +20,7 @@ class Home extends MY_Controller {
 			$_SESSION['code_random'] = 	rand_string(6);
 		}
 		parent::count_cart($_SESSION['code_random']);
+		parent::load_cart($_SESSION['code_random']);
     }
 
     public function index() {

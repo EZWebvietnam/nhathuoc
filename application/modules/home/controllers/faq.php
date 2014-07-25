@@ -21,6 +21,7 @@ class Faq extends MY_Controller
 			$_SESSION['code_random']= rand_string(6);
 		}
 		parent::count_cart($_SESSION['code_random']);
+		parent::load_cart($_SESSION['code_random']);
 	}
 	public function list_faq()
 	{
