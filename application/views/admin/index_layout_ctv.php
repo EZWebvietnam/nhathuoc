@@ -46,6 +46,7 @@ $time_start = microtime_float();
                                 $.ajaxSetup({ cache: false });
 
                             });
+							
                          </script>
     
                             </head>

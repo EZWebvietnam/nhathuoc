@@ -466,6 +466,10 @@
 										{
 											$price = 	$product_sale['price'] - ($product_sale['price'] * ($product_sale['percent']/100));
 										}
+										else
+										{
+											$price = 	$product_sale['price'];
+										}
 										?>
 										<div class="pit_price"><span class="price bold"><?php echo number_format($price);?> ₫</span></div>
 										<div class="clear"></div>

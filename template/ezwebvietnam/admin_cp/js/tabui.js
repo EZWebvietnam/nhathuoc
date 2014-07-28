@@ -4,7 +4,7 @@ $(document).ready(function() {
         addTab($(this));
         return false;
     });
-
+	
     $('#tabs a.tab').live('click', function() {
         // Get the tab name
         var contentname = $(this).attr("id") + "_content";
@@ -40,6 +40,7 @@ $(document).ready(function() {
 });
 function addTab(link) {
     if ($("#" + $(link).attr("rel")).length != 0){
+		
         load_show();
         var contentname = $(link).attr("id") + "_content"; 
         $("#tabs li").removeClass("current");
@@ -67,7 +68,6 @@ function addTab(link) {
     }
     
     load_show();
-                    
     // hide other tabs
     $("#tabs li .remove").remove(); 
     $("#tabs li a#"+$(link).attr("rel")).parent().append("<a class=\"remove\" href=\"javascript:;\"></a>");
@@ -99,6 +99,7 @@ function addTab(link) {
 }
 
 function addTabui(link,div_content,tab_name) {
+	
     // If tab already exist in the list, return
     if ($("#" +div_content).length != 0){
         load_show();
